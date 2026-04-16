@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سياسة الخصوصية — مغامرات ألفي (Android)</title>
+  <style>
+    :root {
+      --primary:   #1a3a6e;
+      --accent:    #2ecc71;
+      --bg:        #f4f7fb;
+      --card:      #ffffff;
+      --text:      #2c3e50;
+      --muted:     #7f8c8d;
+      --border:    #e0e8f0;
+      --radius:    14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ─── Header ─────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563a8 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin: 0 auto 20px;
+      display: block;
+      opacity: 0.55;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    header .subtitle {
+      font-size: 1rem;
+      opacity: 0.80;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-top: 14px;
+    }
+
+    /* ─── Main layout ─────────────────────────────────────────── */
+    main {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    .last-updated {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+
+    /* ─── Card / Section ──────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .card-header h2 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .card p {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ─── Highlight box ───────────────────────────────────────── */
+    .highlight {
+      background: #eaf7f0;
+      border-right: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-weight: 600;
+      color: #1a5c3a;
+    }
+
+    .highlight-blue {
+      background: #eef4ff;
+      border-right: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      color: #1a3a6e;
+    }
+
+    /* ─── List ────────────────────────────────────────────────── */
+    ul.clean {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.clean li {
+      padding: 8px 0;
+      padding-right: 28px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    ul.clean li:last-child { border-bottom: none; }
+
+    ul.clean li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    ul.no li::before {
+      content: "✗";
+      color: #e74c3c;
+    }
+
+    /* ─── Language divider ────────────────────────────────────── */
+    .lang-divider {
+      text-align: center;
+      margin: 50px 0 36px;
+      position: relative;
+    }
+
+    .lang-divider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .lang-divider span {
+      position: relative;
+      background: var(--bg);
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* ─── English section ─────────────────────────────────────── */
+    .en-section {
+      direction: ltr;
+      text-align: left;
+    }
+
+    .en-section .card-header h2 { text-align: left; }
+    .en-section .highlight      { border-right: none; border-left: 4px solid var(--accent); }
+    .en-section .highlight-blue { border-right: none; border-left: 4px solid var(--primary); }
+    .en-section ul.clean li     { padding-right: 0; padding-left: 28px; }
+    .en-section ul.clean li::before { right: auto; left: 0; }
+
+    /* ─── Contact ─────────────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .contact-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+
+    .contact-item .label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-item .value {
+      font-weight: 600;
+      color: var(--primary);
+      word-break: break-all;
+    }
+
+    /* ─── Footer ──────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 22px 18px; }
+      header h1 { font-size: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════ -->
+<header>
+  <img class="app-icon" src="app-icon.png" alt="مغامرات ألفي" />
+  <h1>مغامرات ألفي</h1>
+  <p class="subtitle">سياسة الخصوصية — Privacy Policy</p>
+  <span class="badge">تطبيق تعليمي للأطفال · Children's Educational App · Android</span>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     ARABIC SECTION
+════════════════════════════════════════════════════ -->
+<main>
+  <p class="last-updated">آخر تحديث: أبريل 2026 · Last updated: April 2026</p>
+
+  <!-- 1. مقدمة -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#eef4ff;">📋</div>
+      <h2>مقدمة</h2>
+    </div>
+    <p>
+      مرحباً بك في تطبيق <strong>مغامرات ألفي</strong>، التطبيق التعليمي المصمّم لتعليم الأطفال الحروف العربية والأرقام والألوان بطريقة ممتعة وتفاعلية.
+    </p>
+    <p>
+      نحن نحترم خصوصية أطفالكم ونلتزم بحماية بياناتهم. تُوضّح هذه السياسة ما نجمعه وما لا نجمعه من معلومات عند استخدام التطبيق.
+    </p>
+    <div class="highlight">
+      🔒 التطبيق لا يجمع أي بيانات شخصية من الأطفال ولا يتطلب إنشاء حساب.
+    </div>
+  </div>
+
+  <!-- 2. ما لا نجمعه -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#fff0f0;">🚫</div>
+      <h2>ما لا نجمع</h2>
+    </div>
+    <ul class="clean no">
+      <li>لا نجمع أسماء أو عناوين بريد إلكتروني أو أي معلومات تعريفية</li>
+      <li>لا نطلب إنشاء حساب أو تسجيل دخول</li>
+      <li>لا نتتبّع الموقع الجغرافي</li>
+      <li>لا نستخدم كاميرا أو ميكروفون</li>
+      <li>لا نعرض إعلانات من أي نوع</li>
+      <li>لا نشارك أي بيانات مع أطراف خارجية</li>
+      <li>لا نستخدم أدوات تتبّع أو تحليلات سلوكية</li>
+    </ul>
+  </div>
+
+  <!-- 3. ما نحفظه محلياً -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#eaf7f0;">💾</div>
+      <h2>البيانات المحفوظة محلياً على الجهاز</h2>
+    </div>
+    <p>يحفظ التطبيق البيانات التالية <strong>على الجهاز فقط</strong> ولا تُرسل إلى أي خادم:</p>
+    <ul class="clean">
+      <li>تقدّم الطفل في المراحل (المراحل المكتملة والنجوم)</li>
+      <li>النقاط المتراكمة</li>
+      <li>إعداد الصوت (مفعّل / معطّل)</li>
+      <li>حالة الشراء داخل التطبيق (مفتوح / مقفول)</li>
+    </ul>
+    <div class="highlight-blue">
+      💡 يمكن حذف هذه البيانات في أي وقت عبر حذف التطبيق من الجهاز.
+    </div>
+  </div>
+
+  <!-- 4. المشتريات داخل التطبيق -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#fffbea;">💳</div>
+      <h2>المشتريات داخل التطبيق (IAP)</h2>
+    </div>
+    <p>
+      يتضمّن التطبيق خيار شراء اختياري لفتح جميع المراحل. تتم عمليات الشراء بالكامل عبر <strong>Google Play</strong> وتخضع لسياسة خصوصية Google.
+    </p>
+    <p>
+      نحن لا نطّلع على أي بيانات مالية أو بيانات بطاقة ائتمان. كل عمليات الدفع تُعالَج مباشرةً من Google.
+    </p>
+    <div class="highlight-blue">
+      🔄 تُستعاد المشتريات تلقائياً عند تسجيل الدخول بنفس حساب Google المستخدم للشراء.
+    </div>
+  </div>
+
+  <!-- 5. حماية الأطفال -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#f0f8ff;">👶</div>
+      <h2>حماية الأطفال</h2>
+    </div>
+    <p>
+      التطبيق مصمّم للأطفال من عمر 3 إلى 8 سنوات. نلتزم بالمعايير الدولية لحماية خصوصية الأطفال، بما فيها:
+    </p>
+    <ul class="clean">
+      <li>لا نجمع أي معلومات شخصية من الأطفال</li>
+      <li>لا توجد تواصل اجتماعي أو دردشة داخل التطبيق</li>
+      <li>المحتوى مناسب تماماً للفئة العمرية</li>
+      <li>أي إجراء يتعلق بالشراء يتطلب موافقة الوالدين</li>
+      <li>يمكن للوالدين تفعيل قيود الرقابة الأبوية عبر إعدادات Google Play Family</li>
+    </ul>
+  </div>
+
+  <!-- 6. خصوصية الوالدين -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#fef9f0;">👨‍👩‍👧</div>
+      <h2>لوحة تقدّم الطفل للوالدين</h2>
+    </div>
+    <p>
+      يتضمّن التطبيق لوحة اختيارية للوالدين تعرض تقدّم الطفل في المراحل ودقة الكتابة. هذه البيانات:
+    </p>
+    <ul class="clean">
+      <li>محفوظة على الجهاز فقط ولا تُرفع إلى الإنترنت</li>
+      <li>لا تُشارك مع أي طرف ثالث</li>
+      <li>محمية برمز PIN للوالدين داخل التطبيق</li>
+    </ul>
+  </div>
+
+  <!-- 7. تعديلات السياسة -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#f8f0ff;">🔄</div>
+      <h2>تعديلات على هذه السياسة</h2>
+    </div>
+    <p>
+      قد نُحدّث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة مع تحديث تاريخ "آخر تحديث" في الأعلى. ننصح بمراجعة هذه الصفحة بشكل دوري.
+    </p>
+  </div>
+
+  <!-- 8. التواصل -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#eaf7f0;">✉️</div>
+      <h2>التواصل معنا</h2>
+    </div>
+    <p>إذا كان لديك أي استفسار حول سياسة الخصوصية، يمكنك التواصل معنا:</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">المطوّر</div>
+        <div class="value">Tech4App</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Package Name</div>
+        <div class="value">com.dow.LetsLearn</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">البريد الإلكتروني</div>
+        <div class="value">diaa.themaster@gmail.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">المنصة</div>
+        <div class="value">Google Play Store — Android</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DIVIDER ═══ -->
+  <div class="lang-divider">
+    <span>ENGLISH VERSION</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       ENGLISH SECTION
+  ════════════════════════════════════════════════════ -->
+  <div class="en-section">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eef4ff;">📋</div>
+        <h2>Introduction</h2>
+      </div>
+      <p>
+        Welcome to <strong>Mughamarat Alfi</strong>, an educational app designed to help children learn Arabic letters, numbers, and colors in a fun and interactive way.
+      </p>
+      <p>
+        We are committed to protecting children's privacy. This policy explains what information we collect — and what we do not collect — when you use our app.
+      </p>
+      <div class="highlight">
+        🔒 The app does not collect any personal data from children and does not require account creation.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fff0f0;">🚫</div>
+        <h2>What We Do NOT Collect</h2>
+      </div>
+      <ul class="clean no">
+        <li>No names, email addresses, or any personally identifiable information</li>
+        <li>No account registration or login required</li>
+        <li>No location tracking</li>
+        <li>No camera or microphone access</li>
+        <li>No advertisements of any kind</li>
+        <li>No data shared with third parties</li>
+        <li>No behavioral tracking or analytics</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eaf7f0;">💾</div>
+        <h2>Data Stored Locally on Device</h2>
+      </div>
+      <p>The app saves the following data <strong>locally on the device only</strong> — nothing is sent to any server:</p>
+      <ul class="clean">
+        <li>Child's progress (completed levels and stars)</li>
+        <li>Accumulated points</li>
+        <li>Sound settings (on/off)</li>
+        <li>In-app purchase status (locked/unlocked)</li>
+      </ul>
+      <div class="highlight-blue">
+        💡 This data can be deleted at any time by uninstalling the app.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fffbea;">💳</div>
+        <h2>In-App Purchases</h2>
+      </div>
+      <p>
+        The app includes an optional purchase to unlock all levels. All purchases are processed entirely through <strong>Google Play</strong> and are subject to Google's Privacy Policy.
+      </p>
+      <p>
+        We do not access any financial or payment card data. All payments are handled directly by Google.
+      </p>
+      <div class="highlight-blue">
+        🔄 Purchases are automatically restored when you sign in with the same Google account used for the original purchase.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#f0f8ff;">👶</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>
+        This app is designed for children aged 3–8. We comply with applicable children's privacy laws and standards, including:
+      </p>
+      <ul class="clean">
+        <li>No personal information collected from children</li>
+        <li>No social features or in-app chat</li>
+        <li>All content is age-appropriate</li>
+        <li>Any purchase requires parental approval</li>
+        <li>Parents can enable additional controls via Google Play Family settings</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fef9f0;">👨‍👩‍👧</div>
+        <h2>Parental Progress Dashboard</h2>
+      </div>
+      <p>The app includes an optional dashboard for parents showing the child's level progress and writing accuracy. This data is:</p>
+      <ul class="clean">
+        <li>Stored on-device only — never uploaded to the internet</li>
+        <li>Never shared with any third party</li>
+        <li>Protected by a parental PIN inside the app</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#f8f0ff;">🔄</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date at the top. We encourage you to review this page periodically.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eaf7f0;">✉️</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="label">Developer</div>
+          <div class="value">Tech4App</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Package Name</div>
+          <div class="value">com.dow.LetsLearn</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value">diaa.themaster@gmail.com</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Platform</div>
+          <div class="value">Google Play Store — Android</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end .en-section -->
+</main>
+
+<footer>
+  <p>© 2026 مغامرات ألفي · Mughamarat Alfi · جميع الحقوق محفوظة · All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
