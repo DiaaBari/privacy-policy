@@ -299,8 +299,8 @@
       <li>لا نتتبّع الموقع الجغرافي</li>
       <li>لا نستخدم كاميرا أو ميكروفون</li>
       <li>لا نعرض إعلانات من أي نوع</li>
-      <li>لا نشارك أي بيانات مع أطراف خارجية</li>
-      <li>لا نستخدم أدوات تتبّع أو تحليلات سلوكية</li>
+      <li>لا نشارك أي معلومات شخصية قابلة للتعريف مع أي طرف</li>
+      <li>لا نستخدم التتبع لأغراض إعلانية</li>
     </ul>
   </div>
 
@@ -320,6 +320,29 @@
     <div class="highlight-blue">
       💡 يمكن حذف هذه البيانات في أي وقت عبر حذف التطبيق من الجهاز.
     </div>
+  </div>
+
+  <!-- 3b. تحليلات الأداء (Firebase) -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#fff4e6;">📊</div>
+      <h2>تحليلات الأداء (Firebase)</h2>
+    </div>
+    <p>
+      نستخدم خدمات <strong>Google Firebase</strong> لفهم كيفية استخدام التطبيق، وإصلاح الأعطال، وتحسين التجربة التعليمية:
+    </p>
+    <ul class="clean">
+      <li><strong>Firebase Analytics:</strong> أحداث مجهولة الهوية (مثل: بدء مرحلة، إكمالها، تبديل اللغة، فتح لوحة التقدم) مع معلومات تقنية عامة (نوع الجهاز، إصدار النظام، إعدادات اللغة، المدة التقريبية للجلسة)</li>
+      <li><strong>Firebase Crashlytics:</strong> تقارير أعطال تقنية فقط عند حدوث خلل (نوع الجهاز، نظام التشغيل، stack trace التقني)</li>
+    </ul>
+    <div class="highlight">
+      🔒 جميع هذه البيانات <strong>مجهولة الهوية بالكامل</strong> — لا اسم، ولا بريد إلكتروني، ولا موقع دقيق، ولا تُستخدم لأي إعلانات أو تتبع إعلاني.
+    </div>
+    <p>لمزيد من التفاصيل راجع:</p>
+    <ul class="clean">
+      <li>سياسة خصوصية Firebase: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+      <li>سياسة خصوصية Google: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+    </ul>
   </div>
 
   <!-- 4. المشتريات داخل التطبيق -->
@@ -447,8 +470,8 @@
         <li>No location tracking</li>
         <li>No camera or microphone access</li>
         <li>No advertisements of any kind</li>
-        <li>No data shared with third parties</li>
-        <li>No behavioral tracking or analytics</li>
+        <li>No personally identifiable information shared with any party</li>
+        <li>No tracking for advertising purposes</li>
       </ul>
     </div>
 
@@ -467,6 +490,28 @@
       <div class="highlight-blue">
         💡 This data can be deleted at any time by uninstalling the app.
       </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fff4e6;">📊</div>
+        <h2>Performance Analytics (Firebase)</h2>
+      </div>
+      <p>
+        We use <strong>Google Firebase</strong> services to understand how the app is used, fix crashes, and improve the educational experience:
+      </p>
+      <ul class="clean">
+        <li><strong>Firebase Analytics:</strong> anonymous events (such as: level start, level complete, language toggle, dashboard opened) along with general technical info (device model, OS version, language setting, approximate session duration)</li>
+        <li><strong>Firebase Crashlytics:</strong> technical crash reports only when a crash occurs (device model, OS, technical stack trace)</li>
+      </ul>
+      <div class="highlight">
+        🔒 All this data is <strong>fully anonymous</strong> — no name, no email, no precise location, and never used for advertising or ad tracking.
+      </div>
+      <p>For more details, see:</p>
+      <ul class="clean">
+        <li>Firebase Privacy Policy: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+        <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
     </div>
 
     <div class="card">
