@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diaeddin Abdalbari — Unity Developer</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #21262d;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --accent3: #f78166;
+      --purple: #bc8cff;
+      --yellow: #e3b341;
+      --text: #e6edf3;
+      --text-soft: #8b949e;
+      --card-hover: #1c2128;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,17,23,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 32px; height: 60px;
+    }
+    .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--accent); letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 80px 24px 60px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(88,166,255,0.08) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: 700px; }
+    .hero-avatar {
+      width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem; font-weight: 800; color: #fff;
+      box-shadow: 0 0 40px rgba(88,166,255,0.3);
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.3); color: var(--accent);
+      border-radius: 20px; padding: 4px 14px; font-size: 0.82rem;
+      margin-bottom: 16px; letter-spacing: 0.5px;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .hero-title span { color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--text-soft); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .hero-contacts { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+    .contact-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 7px 16px; font-size: 0.85rem;
+      color: var(--text-soft); text-decoration: none; transition: all .2s;
+    }
+    .contact-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 11px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; transition: all .2s; cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-primary:hover { background: #79b8ff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(88,166,255,0.3); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      display: flex; gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat { flex: 1; text-align: center; padding: 24px 16px; border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .stat-label { font-size: 0.8rem; color: var(--text-soft); margin-top: 4px; }
+
+    /* ── Section ── */
+    section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 40px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .section-tag { color: var(--accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ── Skills ── */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-chip {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 16px; font-size: 0.88rem;
+      color: var(--text-soft); transition: all .2s; cursor: default;
+    }
+    .skill-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .skill-chip.highlight { border-color: rgba(88,166,255,0.4); color: var(--accent); background: rgba(88,166,255,0.08); }
+
+    /* ── Services ── */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .service-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; transition: all .2s;
+    }
+    .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .service-desc { font-size: 0.88rem; color: var(--text-soft); line-height: 1.6; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .service-tag { background: var(--surface2); border-radius: 4px; padding: 3px 10px; font-size: 0.75rem; color: var(--text-soft); }
+
+    /* ── Experience ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 40px; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -33px; top: 8px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+    .timeline-company { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+    .timeline-period { font-size: 0.82rem; color: var(--text-soft); background: var(--surface2); padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .timeline-role { color: var(--accent); font-size: 0.9rem; margin-bottom: 10px; }
+    .timeline-list { list-style: none; }
+    .timeline-list li { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 6px; padding-left: 16px; position: relative; }
+    .timeline-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent2); }
+
+    /* ── Projects ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; transition: all .2s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .project-icon { font-size: 1.8rem; }
+    .project-badge { font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .badge-green { background: rgba(63,185,80,0.15); color: var(--accent2); }
+    .badge-blue { background: rgba(88,166,255,0.15); color: var(--accent); }
+    .badge-purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+    .project-title { font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+    .project-desc { font-size: 0.86rem; color: var(--text-soft); flex: 1; margin-bottom: 14px; }
+    .project-stat { font-size: 0.82rem; color: var(--yellow); margin-bottom: 12px; }
+    .project-links { display: flex; gap: 8px; }
+    .project-link {
+      flex: 1; text-align: center; padding: 7px; border-radius: 6px;
+      font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all .2s;
+      border: 1px solid var(--border); color: var(--text-soft);
+    }
+    .project-link:hover { border-color: var(--accent); color: var(--accent); }
+    .project-link.primary { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+    .project-link.primary:hover { background: #79b8ff; }
+
+    /* ── Education ── */
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .edu-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; transition: all .2s;
+    }
+    .edu-card:hover { border-color: var(--purple); }
+    .edu-icon { font-size: 2rem; margin-bottom: 12px; }
+    .edu-degree { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+    .edu-school { color: var(--accent); font-size: 0.9rem; margin-bottom: 6px; }
+    .edu-year { font-size: 0.82rem; color: var(--text-soft); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 40px 24px;
+      border-top: 1px solid var(--border); color: var(--text-soft); font-size: 0.87rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .stats-bar { flex-wrap: wrap; }
+      .stat { min-width: 50%; }
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-inner > * { animation: fadeUp .6s ease both; }
+    .hero-inner > *:nth-child(2) { animation-delay: .1s; }
+    .hero-inner > *:nth-child(3) { animation-delay: .2s; }
+    .hero-inner > *:nth-child(4) { animation-delay: .3s; }
+    .hero-inner > *:nth-child(5) { animation-delay: .4s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DA</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-avatar">D</div>
+    <div class="hero-badge">Available for freelance</div>
+    <h1 class="hero-title">Diaeddin <span>Abdalbari</span></h1>
+    <p class="hero-sub">Unity Game Developer with 10+ years of experience building mobile games for Android, iOS & WebGL — from casual puzzles to educational apps.</p>
+    <div class="hero-contacts">
+      <a class="contact-chip" href="mailto:diaeddinbari@gmail.com">✉ diaeddinbari@gmail.com</a>
+      <a class="contact-chip" href="https://www.linkedin.com/in/diaabari" target="_blank">💼 LinkedIn</a>
+      <a class="contact-chip" href="https://www.upwork.com" target="_blank">🔗 Upwork</a>
+      <a class="contact-chip" href="#">📍 Gaza, Palestine</a>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:diaeddinbari@gmail.com">Hire Me</a>
+      <a class="btn btn-outline" href="#projects">View Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+  <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Games Published</div></div>
+  <div class="stat"><div class="stat-num">11M+</div><div class="stat-label">Total Downloads</div></div>
+  <div class="stat"><div class="stat-num">80+</div><div class="stat-label">Students Mentored</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" style="max-width:1000px;margin:0 auto;padding:80px 24px;">
+  <p class="section-tag">What I offer</p>
+  <h2 class="section-title">Services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">🎮</div>
+      <div class="service-title">Mobile Game Development</div>
+      <div class="service-desc">End-to-end Unity game development for Android & iOS. From prototype to publishing on Google Play and App Store.</div>
+      <div class="service-tags">
+        <span class="service-tag">Unity</span><span class="service-tag">C#</span>
+        <span class="service-tag">Android</span><span class="service-tag">iOS</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <div class="service-title">Educational Games</div>
+      <div class="service-desc">Specialized in building interactive learning apps for kids, including games for special needs children with engaging UX.</div>
+      <div class="service-tags">
+        <span class="service-tag">Kids Apps</span><span class="service-tag">Special Needs</span>
+        <span class="service-tag">Arabic Support</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💰</div>
+      <div class="service-title">Game Monetization</div>
+      <div class="service-desc">Integrate AdMob, In-App Purchases, and subscriptions. Maximize revenue while maintaining great user experience.</div>
+      <div class="service-tags">
+        <span class="service-tag">AdMob</span><span class="service-tag">IAP</span>
+        <span class="service-tag">ironSource</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔄</div>
+      <div class="service-title">Game Reskin & Publishing</div>
+      <div class="service-desc">Fast and professional reskin of existing games with branding, localization, and full store deployment.</div>
+      <div class="service-tags">
+        <span class="service-tag">Reskin</span><span class="service-tag">Localization</span>
+        <span class="service-tag">Play Store</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📡</div>
+      <div class="service-title">Backend & Analytics Integration</div>
+      <div class="service-desc">Connect your game to Firebase, REST APIs, Google Sign-In, OneSignal notifications, and GameAnalytics.</div>
+      <div class="service-tags">
+        <span class="service-tag">Firebase</span><span class="service-tag">REST API</span>
+        <span class="service-tag">Analytics</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🕶️</div>
+      <div class="service-title">AR Games (Vuforia)</div>
+      <div class="service-desc">Augmented Reality game experiences using Vuforia SDK for interactive and immersive gameplay on mobile devices.</div>
+      <div class="service-tags">
+        <span class="service-tag">Vuforia</span><span class="service-tag">AR</span>
+        <span class="service-tag">Unity</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="max-width:1000px;margin:0 auto;padding:80px 24px;">
+  <p class="section-tag">Career</p>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-company">Element Media</span>
+        <span class="timeline-period">Jun 2022 – Oct 2023</span>
+      </div>
+      <div class="timeline-role">Unity Engineer</div>
+      <ul class="timeline-list">
+        <li>Lead developer on "Muffaker" — 2D educational game for special needs children</li>
+        <li>Deployed "Letters Land" on Android & iOS</li>
+        <li>Implemented In-App Purchases, REST API integration, and size optimization</li>
+        <li>Managed releases on App Store and Google Play</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-company">Freelancer — Upwork</span>
+        <span class="timeline-period">Jun 2019 – Present</span>
+      </div>
+      <div class="timeline-role">Unity Engineer</div>
+      <ul class="timeline-list">
+        <li>Major contributor on "Kidoku – Kids Sudoku Puzzle" (50K+ downloads)</li>
+        <li>Developed "Sahib Game" — 2D multiplayer game with interactive stories</li>
+        <li>Contributed to "Solitaire Cruise: Card Games" (10M+ downloads)</li>
+        <li>Built "Arabic Letters App" for kids with special needs</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-company">Dash</span>
+        <span class="timeline-period">Sep 2021 – Jun 2022</span>
+      </div>
+      <div class="timeline-role">Unity Engineer</div>
+      <ul class="timeline-list">
+        <li>Created 2 games from scratch, reskinned 5 games</li>
+        <li>Published 7 games on Google Play and App Store</li>
+        <li>Handled localization, IAP, AdMob, and multi-device support</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-company">ZAITOON</span>
+        <span class="timeline-period">Aug 2016 – Sep 2021</span>
+      </div>
+      <div class="timeline-role">Unity Engineer</div>
+      <ul class="timeline-list">
+        <li>Mentored 80+ students across 10 cohorts</li>
+        <li>Developed "Draw Arabic Letters and Numbers" (10K+ downloads)</li>
+        <li>Created "Find the Differences" for Google Play & App Store (10K+ downloads)</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <span class="timeline-company">Seeds Tech</span>
+        <span class="timeline-period">Jan 2015 – Aug 2016</span>
+      </div>
+      <div class="timeline-role">Unity Engineer</div>
+      <ul class="timeline-list">
+        <li>Designed "Rose is Talking to You" — Unity game with 1M+ downloads on Google Play</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="max-width:1000px;margin:0 auto;padding:80px 24px;">
+  <p class="section-tag">Portfolio</p>
+  <h2 class="section-title">Notable Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🃏</span>
+        <span class="project-badge badge-green">10M+ Downloads</span>
+      </div>
+      <div class="project-title">Solitaire Cruise: Card Games</div>
+      <div class="project-desc">Contributed to one of the most downloaded card games. Major global release with millions of active users.</div>
+      <div class="project-stat">⭐ 10,000,000+ downloads</div>
+      <div class="project-links">
+        <a class="project-link primary" href="https://play.google.com/store/search?q=solitaire+cruise" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🌹</span>
+        <span class="project-badge badge-green">1M+ Downloads</span>
+      </div>
+      <div class="project-title">Rose is Talking to You</div>
+      <div class="project-desc">Interactive Unity game with engaging storytelling mechanics. One of the early successes in the portfolio.</div>
+      <div class="project-stat">⭐ 1,000,000+ downloads</div>
+      <div class="project-links">
+        <a class="project-link primary" href="https://play.google.com/store/search?q=rose+is+talking+to+you" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🧩</span>
+        <span class="project-badge badge-blue">50K+ Downloads</span>
+      </div>
+      <div class="project-title">Kidoku – Kids Sudoku Puzzle</div>
+      <div class="project-desc">Educational puzzle game for children combining fun gameplay with cognitive skill development.</div>
+      <div class="project-stat">⭐ 50,000+ downloads</div>
+      <div class="project-links">
+        <a class="project-link primary" href="https://play.google.com/store/search?q=kidoku+sudoku" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🔍</span>
+        <span class="project-badge badge-blue">10K+ Downloads</span>
+      </div>
+      <div class="project-title">Find the Differences</div>
+      <div class="project-desc">Spot-the-difference puzzle game with multiple categories. Available on Android & iOS with remote asset bundles.</div>
+      <div class="project-stat">⭐ 10,000+ downloads</div>
+      <div class="project-links">
+        <a class="project-link primary" href="https://play.google.com/store/apps/details?id=com.tech4app.differences" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-icon">✏️</span>
+        <span class="project-badge badge-blue">10K+ Downloads</span>
+      </div>
+      <div class="project-title">Draw Arabic Letters & Numbers</div>
+      <div class="project-desc">Educational app for children learning Arabic letters and numbers with interactive drawing mechanics.</div>
+      <div class="project-stat">⭐ 10,000+ downloads</div>
+      <div class="project-links">
+        <a class="project-link primary" href="https://play.google.com/store/search?q=draw+arabic+letters" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🧠</span>
+        <span class="project-badge badge-purple">Special Needs</span>
+      </div>
+      <div class="project-title">Muffaker — Educational Game</div>
+      <div class="project-desc">2D educational game catering to special needs children. Includes Letters Land, Art, Professions, and Classification modules.</div>
+      <div class="project-stat">🎓 Letters Land on Android & iOS</div>
+      <div class="project-links">
+        <a class="project-link" href="https://play.google.com/store/search?q=muffaker" target="_blank">View App</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="max-width:1000px;margin:0 auto;padding:80px 24px;">
+  <p class="section-tag">Tech Stack</p>
+  <h2 class="section-title">Skills</h2>
+  <div style="display:flex;flex-direction:column;gap:28px;">
+
+    <div>
+      <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:12px;font-weight:600;">CORE</div>
+      <div class="skills-grid">
+        <span class="skill-chip highlight">Unity</span>
+        <span class="skill-chip highlight">C#</span>
+        <span class="skill-chip highlight">Android</span>
+        <span class="skill-chip highlight">iOS</span>
+        <span class="skill-chip highlight">WebGL</span>
+        <span class="skill-chip highlight">Git / GitHub</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:12px;font-weight:600;">SDKs & SERVICES</div>
+      <div class="skills-grid">
+        <span class="skill-chip">Firebase</span>
+        <span class="skill-chip">AdMob</span>
+        <span class="skill-chip">ironSource</span>
+        <span class="skill-chip">OneSignal</span>
+        <span class="skill-chip">Facebook SDK</span>
+        <span class="skill-chip">Google Sign-In</span>
+        <span class="skill-chip">GameAnalytics</span>
+        <span class="skill-chip">Vuforia AR</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:12px;font-weight:600;">STORE & MONETIZATION</div>
+      <div class="skills-grid">
+        <span class="skill-chip">In-App Purchases</span>
+        <span class="skill-chip">In-App Update</span>
+        <span class="skill-chip">In-App Review</span>
+        <span class="skill-chip">Google Play Console</span>
+        <span class="skill-chip">App Store Connect</span>
+        <span class="skill-chip">Xcode</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size:0.85rem;color:var(--text-soft);margin-bottom:12px;font-weight:600;">BACKEND & TOOLS</div>
+      <div class="skills-grid">
+        <span class="skill-chip">REST API</span>
+        <span class="skill-chip">Web Services</span>
+        <span class="skill-chip">Asset Bundles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="max-width:1000px;margin:0 auto;padding:80px 24px;">
+  <p class="section-tag">Background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-degree">Bachelor of Engineering — Software Engineering</div>
+      <div class="edu-school">University of Palestine, Gaza</div>
+      <div class="edu-year">Graduated April 2020</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">📜</div>
+      <div class="edu-degree">Diploma — Programming & Database</div>
+      <div class="edu-school">Gaza Training Center, Gaza</div>
+      <div class="edu-year">Graduated June 2016</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Built with ♥ · <a href="mailto:diaeddinbari@gmail.com">diaeddinbari@gmail.com</a> · <a href="https://www.linkedin.com/in/diaabari" target="_blank">LinkedIn</a></p>
+  <p style="margin-top:8px;font-size:0.8rem;">© 2026 Diaeddin Abdalbari — All rights reserved</p>
+</footer>
+
+<script>
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+    });
+  });
+
+  // Animate cards on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'fadeUp .5s ease both';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .project-card, .edu-card, .timeline-item').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
