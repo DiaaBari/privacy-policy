@@ -48,7 +48,7 @@ nav.site a:hover{color:var(--blue);text-decoration:none}
 .store-btn .t small{font-size:12px;opacity:.85;font-weight:400}
 .store-btn .t b{font-size:19px;font-family:'Baloo Bhaijaan 2',sans-serif}
 .store-btn.soon{background:#9aa0ad}
-.store-btn.soon .t small::after{content:' (قريباً)'}
+
 
 /* الميزات */
 .section{padding:50px 0}
@@ -99,3 +99,12 @@ footer.site .cp{color:var(--muted);font-size:15px}
   nav.site a{margin-inline-start:12px;font-size:15px}
   .doc{padding:28px 22px}
 }
+
+/* ── تبديل اللغة (عربي/إنجليزي) ── */
+html[data-lang="ar"] .en{display:none !important}
+html[data-lang="en"] .ar{display:none !important}
+.langbtn{background:var(--green);color:#fff;border:0;border-radius:999px;
+  padding:7px 16px;font-family:'Baloo Bhaijaan 2','Tajawal',sans-serif;font-weight:700;
+  font-size:15px;cursor:pointer;margin-inline-start:14px;line-height:1.4}
+.langbtn:hover{background:#27814c}
+html[data-lang="en"] body{text-align:left}

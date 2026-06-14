@@ -1,66 +1,74 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الدعم — أكتب مع ألفي</title>
-<meta name="description" content="صفحة دعم تطبيق «أكتب مع ألفي»: أسئلة شائعة وتواصل.">
+<title>الدعم | Support — أكتب مع ألفي</title>
+<meta name="description" content="صفحة دعم تطبيق «أكتب مع ألفي»: أسئلة شائعة وتواصل. Support for Write with Alfy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
 </head>
 <body>
 
 <header class="site">
   <div class="container">
-    <div class="brand"><span class="dot">أ</span> أكتب مع ألفي</div>
+    <div class="brand"><span class="dot"><span class="ar">أ</span><span class="en">A</span></span>
+      <span class="ar">أكتب مع ألفي</span><span class="en">Write with Alfy</span></div>
     <nav class="site">
-      <a href="index.html">الرئيسية</a>
-      <a href="support.html">الدعم</a>
-      <a href="privacy.html">الخصوصية</a>
-      <a href="terms.html">الشروط</a>
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button class="langbtn" onclick="toggleLang()"><span class="ar">English</span><span class="en">العربية</span></button>
     </nav>
   </div>
 </header>
 
 <main class="container">
   <article class="doc">
-    <h1>الدعم والمساعدة</h1>
-    <p class="updated">نحن هنا لمساعدتك — معظم الردود خلال 48 ساعة عمل.</p>
-    <p>قبل التواصل، قد تجد إجابتك في الأسئلة الشائعة أدناه.</p>
+    <h1><span class="ar">الدعم والمساعدة</span><span class="en">Support &amp; Help</span></h1>
+    <p class="updated"><span class="ar">نحن هنا لمساعدتك — معظم الردود خلال 48 ساعة عمل.</span><span class="en">We're here to help — most replies within 48 business hours.</span></p>
+    <p><span class="ar">قبل التواصل، قد تجد إجابتك في الأسئلة الشائعة أدناه.</span><span class="en">Before reaching out, you may find your answer in the FAQ below.</span></p>
   </article>
 
   <section class="section" style="padding-top:0">
     <div class="faq">
-      <h3>كيف أشترك في التطبيق؟</h3>
-      <p>افتح التطبيق واختر «اشتراك»، ثم اتبع خطوات متجر Apple أو Google Play. تسبق العملية بوابة أهل بسيطة.</p>
+      <h3><span class="ar">كيف أشترك في التطبيق؟</span><span class="en">How do I subscribe?</span></h3>
+      <p><span class="ar">افتح التطبيق واختر «اشتراك»، ثم اتبع خطوات متجر Apple أو Google Play. تسبق العملية بوابة أهل بسيطة.</span>
+         <span class="en">Open the app and choose “Subscribe,” then follow the Apple App Store or Google Play steps. A simple parental gate comes first.</span></p>
     </div>
     <div class="faq">
-      <h3>كيف ألغي الاشتراك أو أوقف التجديد؟</h3>
-      <p>يُدار الاشتراك من إعدادات حساب المتجر: على آيفون من «الإعدادات ← Apple ID ← الاشتراكات»،
-         وعلى أندرويد من «Google Play ← الاشتراكات». الإلغاء يوقف التجديد التلقائي.</p>
+      <h3><span class="ar">كيف ألغي الاشتراك أو أوقف التجديد؟</span><span class="en">How do I cancel or stop renewal?</span></h3>
+      <p><span class="ar">يُدار الاشتراك من إعدادات حساب المتجر: على آيفون من «الإعدادات ← Apple ID ← الاشتراكات»، وعلى أندرويد من «Google Play ← الاشتراكات». الإلغاء يوقف التجديد التلقائي.</span>
+         <span class="en">Manage the subscription from your store account: on iPhone via Settings → Apple ID → Subscriptions; on Android via Google Play → Subscriptions. Canceling stops auto-renewal.</span></p>
     </div>
     <div class="faq">
-      <h3>غيّرت جهازي — كيف أستعيد اشتراكي؟</h3>
-      <p>سجّل الدخول بنفس حساب المتجر المُستخدَم عند الشراء، ثم اختر «استعادة المشتريات» داخل التطبيق.</p>
+      <h3><span class="ar">غيّرت جهازي — كيف أستعيد اشتراكي؟</span><span class="en">I changed my device — how do I restore my subscription?</span></h3>
+      <p><span class="ar">سجّل الدخول بنفس حساب المتجر المُستخدَم عند الشراء، ثم اختر «استعادة المشتريات» داخل التطبيق.</span>
+         <span class="en">Sign in with the same store account used at purchase, then choose “Restore Purchases” in the app.</span></p>
     </div>
     <div class="faq">
-      <h3>ما الأجهزة المدعومة؟</h3>
-      <p>هواتف وأجهزة أندرويد اللوحية الحديثة، وأجهزة آيفون/آيباد (قريباً على App Store).</p>
+      <h3><span class="ar">ما الأجهزة المدعومة؟</span><span class="en">Which devices are supported?</span></h3>
+      <p><span class="ar">هواتف وأجهزة أندرويد اللوحية الحديثة، وأجهزة آيفون/آيباد (قريباً على App Store).</span>
+         <span class="en">Modern Android phones and tablets, and iPhone/iPad (coming soon to the App Store).</span></p>
     </div>
     <div class="faq">
-      <h3>هل يحتوي التطبيق إعلانات؟</h3>
-      <p>لا. التطبيق بلا أي إعلانات، وبيئته آمنة للأطفال.</p>
+      <h3><span class="ar">هل يحتوي التطبيق إعلانات؟</span><span class="en">Does the app contain ads?</span></h3>
+      <p><span class="ar">لا. التطبيق بلا أي إعلانات، وبيئته آمنة للأطفال.</span>
+         <span class="en">No. The app has no ads and a safe environment for children.</span></p>
     </div>
     <div class="faq">
-      <h3>ما بوابة الأهل؟</h3>
-      <p>حاجز بسيط (سؤال أو إجراء يصعب على الطفل الصغير) يظهر قبل عمليات الشراء لحماية الأهل من الشراء غير المقصود.</p>
+      <h3><span class="ar">ما بوابة الأهل؟</span><span class="en">What is the parental gate?</span></h3>
+      <p><span class="ar">حاجز بسيط (سؤال أو إجراء يصعب على الطفل الصغير) يظهر قبل عمليات الشراء لحماية الأهل من الشراء غير المقصود.</span>
+         <span class="en">A simple barrier (a question or action difficult for a young child) shown before purchases to protect parents from unintended purchases.</span></p>
     </div>
 
     <div class="contact">
-      <h2>لم تجد إجابتك؟</h2>
-      <p>راسلنا وسنردّ في أقرب وقت.</p>
+      <h2><span class="ar">لم تجد إجابتك؟</span><span class="en">Didn't find your answer?</span></h2>
+      <p><span class="ar">راسلنا وسنردّ في أقرب وقت.</span><span class="en">Email us and we'll reply soon.</span></p>
       <a href="mailto:diaa.themaster@gmail.com">diaa.themaster@gmail.com</a>
     </div>
   </section>
@@ -69,11 +77,11 @@
 <footer class="site">
   <div class="container">
     <nav>
-      <a href="privacy.html">سياسة الخصوصية</a>
-      <a href="terms.html">شروط الاستخدام</a>
-      <a href="support.html">الدعم</a>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Use</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
     </nav>
-    <span class="cp">© 2026 tech4app — جميع الحقوق محفوظة</span>
+    <span class="cp">© 2026 tech4app — <span class="ar">جميع الحقوق محفوظة</span><span class="en">All rights reserved</span></span>
   </div>
 </footer>
 
