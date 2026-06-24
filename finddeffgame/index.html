@@ -1,350 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Find The Differences Five Diff</title>
-  <style>
-    :root {
-      --bg: #FBF3E4;
-      --primary: #B8543A;
-      --ink: #3A2A1A;
-      --ink-soft: #6B4F39;
-      --card: #fff8ee;
-      --border: #e8d9c0;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.75;
-    }
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 40px 24px 32px;
-      text-align: center;
-    }
-    header h1 { font-size: 1.7rem; margin-bottom: 6px; }
-    header p  { font-size: 0.95rem; opacity: 0.85; }
-    .lang-switch {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      padding: 18px;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
-    .lang-switch button {
-      padding: 7px 22px;
-      border: 2px solid var(--primary);
-      border-radius: 20px;
-      background: transparent;
-      color: var(--primary);
-      font-size: 0.9rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all .2s;
-    }
-    .lang-switch button.active,
-    .lang-switch button:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-    main {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
-    section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 28px;
-      margin-bottom: 20px;
-    }
-    h2 {
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    p, li { color: var(--ink-soft); font-size: 0.97rem; }
-    ul { padding-left: 20px; margin-top: 8px; }
-    li { margin-bottom: 6px; }
-    a { color: var(--primary); }
-    .updated {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      margin-bottom: 28px;
-    }
-    /* RTL Arabic */
-    [lang="ar"] { display: none; direction: rtl; text-align: right; }
-    [lang="ar"] ul { padding-left: 0; padding-right: 20px; }
-    body.ar [lang="ar"] { display: block; }
-    body.ar [lang="en"] { display: none; }
-    body.ar { font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find the Differences — اكتشف الفروقات</title>
+<meta name="description" content="Find the Differences: a cozy bilingual spot-the-difference puzzle game for iOS & Android. لعبة ألغاز اكتشاف الفروقات.">
+<link rel="icon" type="image/png" href="owl.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
 </head>
 <body>
 
-<header>
-  <h1>Find The Differences Five Diff</h1>
-  <p>Privacy Policy</p>
+<header class="site">
+  <div class="container">
+    <div class="brand"><img class="logo" src="owl.png" alt="">
+      <span class="ar">اكتشف الفروقات</span><span class="en">Find the Differences</span></div>
+    <nav class="site">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button class="langbtn" onclick="toggleLang()"><span class="ar">English</span><span class="en">العربية</span></button>
+    </nav>
+  </div>
 </header>
 
-<div class="lang-switch">
-  <button class="active" onclick="setLang('en')">English</button>
-  <button onclick="setLang('ar')">العربية</button>
-</div>
-
 <main>
-
-  <!-- ═══════════════ ENGLISH ═══════════════ -->
-  <div lang="en">
-    <p class="updated">Last updated: April 23, 2026</p>
-
-    <section>
-      <h2>👋 Introduction</h2>
-      <p>
-        Welcome to <strong>Find The Differences Five Diff</strong> ("the Game"), developed by <strong>Tech4App</strong>.
-        This Privacy Policy explains how we collect, use, and protect information when you play our game.
-        By playing the Game, you agree to this policy.
-      </p>
-    </section>
-
-    <section>
-      <h2>📦 Information We Collect</h2>
-      <p>We do not collect personally identifiable information directly. However, the following data is collected automatically through third-party services:</p>
-      <ul>
-        <li><strong>Device information</strong>: Device model, OS version, language, screen resolution</li>
-        <li><strong>Gameplay analytics</strong>: Levels played, completion status, stars earned, hints used</li>
-        <li><strong>Crash reports</strong>: Diagnostic data when the app encounters an error</li>
-        <li><strong>Advertising ID</strong>: Used to serve personalized or non-personalized ads</li>
-        <li><strong>Local storage</strong>: Game progress, hint count, and preferences stored on your device only</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>🔧 Third-Party Services</h2>
-      <p>The Game uses the following third-party services, each with their own privacy policies:</p>
-      <ul>
-        <li>
-          <strong>Google AdMob</strong> — Displays advertisements.<br>
-          <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
-        </li>
-        <li>
-          <strong>Firebase Analytics</strong> — Collects anonymous gameplay data to help improve the Game.<br>
-          <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a>
-        </li>
-        <li>
-          <strong>Firebase Crashlytics</strong> — Collects crash reports to help us fix bugs.<br>
-          <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a>
-        </li>
-        <li>
-          <strong>Google Play In-App Purchases</strong> — Handles hint and subscription purchases. Payment data is processed entirely by Google.<br>
-          <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Payments Privacy Notice</a>
-        </li>
-        <li>
-          <strong>Google User Messaging Platform (UMP)</strong> — Manages your ad personalization consent (required for EU/EEA users under GDPR).
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>📢 Advertising</h2>
-      <p>
-        The Game shows banner, interstitial, and rewarded video ads through Google AdMob.
-        If you are located in the EU/EEA/UK, you will be asked for consent before personalized ads are shown.
-        You may choose non-personalized ads at any time through the consent dialog.
-      </p>
-      <p style="margin-top:10px">
-        To opt out of personalized ads on Android, go to:<br>
-        <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong>
-      </p>
-    </section>
-
-    <section>
-      <h2>💳 In-App Purchases</h2>
-      <p>
-        The Game offers optional purchases (hints packs and subscriptions) through Google Play.
-        We do not store any payment or billing information. All transactions are handled by Google Play's secure payment system.
-      </p>
-    </section>
-
-    <section>
-      <h2>👶 Children's Privacy</h2>
-      <p>
-        The Game is not directed to children under 13. We do not knowingly collect personal information from children.
-        If you believe a child has provided us with personal information, please contact us so we can delete it.
-      </p>
-    </section>
-
-    <section>
-      <h2>🔐 Data Security</h2>
-      <p>
-        Game progress and preferences are stored locally on your device using Unity PlayerPrefs and are not transmitted to our servers.
-        All data collected by third-party SDKs is transmitted over encrypted connections (HTTPS).
-      </p>
-    </section>
-
-    <section>
-      <h2>🌍 Your Rights</h2>
-      <p>Depending on your location, you may have the right to:</p>
-      <ul>
-        <li>Access the personal data collected about you</li>
-        <li>Request deletion of your data</li>
-        <li>Opt out of analytics collection (by uninstalling the app)</li>
-        <li>Withdraw ad personalization consent (via in-app consent dialog)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>✏️ Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date.
-        Continued use of the Game after any changes constitutes your acceptance of the new policy.
-      </p>
-    </section>
-
-    <section>
-      <h2>📬 Contact Us</h2>
-      <p>
-        If you have any questions about this Privacy Policy, please contact us at:<br>
-        <a href="mailto:diaa.themaster@gmail.com">diaa.themaster@gmail.com</a>
-      </p>
-    </section>
-  </div>
-
-  <!-- ═══════════════ ARABIC ═══════════════ -->
-  <div lang="ar">
-    <p class="updated">آخر تحديث: ٢٣ أبريل ٢٠٢٦</p>
-
-    <section>
-      <h2>👋 مقدمة</h2>
-      <p>
-        مرحباً بك في لعبة <strong>اكتشف الفروقات الخمس</strong>، التي طوّرتها <strong>Tech4App</strong>.
-        تشرح سياسة الخصوصية هذه كيفية جمع المعلومات واستخدامها وحمايتها عند لعبك للعبة.
-        باستخدامك اللعبة، فإنك توافق على هذه السياسة.
-      </p>
-    </section>
-
-    <section>
-      <h2>📦 المعلومات التي نجمعها</h2>
-      <p>لا نجمع معلومات شخصية مباشرة. ومع ذلك، تُجمع البيانات التالية تلقائياً من خلال خدمات الطرف الثالث:</p>
-      <ul>
-        <li><strong>معلومات الجهاز</strong>: طراز الجهاز، إصدار نظام التشغيل، اللغة، دقة الشاشة</li>
-        <li><strong>تحليلات اللعب</strong>: المستويات التي لعبتها، حالة الإكمال، النجوم المكتسبة، التلميحات المستخدمة</li>
-        <li><strong>تقارير الأعطال</strong>: بيانات تشخيصية عند حدوث خطأ في التطبيق</li>
-        <li><strong>معرّف الإعلانات</strong>: يُستخدم لعرض إعلانات مخصصة أو غير مخصصة</li>
-        <li><strong>التخزين المحلي</strong>: تقدم اللعبة، عدد التلميحات، وتفضيلاتك — مخزّنة على جهازك فقط</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>🔧 خدمات الطرف الثالث</h2>
-      <p>تستخدم اللعبة الخدمات التالية، ولكل منها سياسة خصوصية خاصة:</p>
-      <ul>
-        <li>
-          <strong>Google AdMob</strong> — لعرض الإعلانات<br>
-          <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
-        </li>
-        <li>
-          <strong>Firebase Analytics</strong> — يجمع بيانات اللعب بصورة مجهولة لتحسين اللعبة<br>
-          <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a>
-        </li>
-        <li>
-          <strong>Firebase Crashlytics</strong> — يجمع تقارير الأعطال لمساعدتنا في إصلاح المشكلات<br>
-          <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a>
-        </li>
-        <li>
-          <strong>Google Play — المشتريات داخل التطبيق</strong> — تتم معالجة بيانات الدفع بالكامل من قِبل Google<br>
-          <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">إشعار خصوصية Google Payments</a>
-        </li>
-        <li>
-          <strong>Google UMP (منصة رسائل المستخدم)</strong> — تدير موافقتك على الإعلانات المخصصة (مطلوبة للمستخدمين في الاتحاد الأوروبي)
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>📢 الإعلانات</h2>
-      <p>
-        تعرض اللعبة إعلانات بانر، وإعلانات بينية، وفيديوهات مكافأة عبر Google AdMob.
-        إذا كنت في الاتحاد الأوروبي أو المملكة المتحدة، ستُطلب موافقتك قبل عرض الإعلانات المخصصة.
-        يمكنك اختيار الإعلانات غير المخصصة في أي وقت من نافذة الموافقة.
-      </p>
-      <p style="margin-top:10px">
-        لإلغاء تخصيص الإعلانات على Android:<br>
-        <strong>الإعدادات ← Google ← الإعلانات ← إلغاء تفعيل تخصيص الإعلانات</strong>
-      </p>
-    </section>
-
-    <section>
-      <h2>💳 المشتريات داخل التطبيق</h2>
-      <p>
-        تتيح اللعبة شراء حزم تلميحات واشتراكات عبر Google Play.
-        لا نقوم بتخزين أي معلومات دفع أو فوترة. تتم جميع المعاملات عبر نظام الدفع الآمن في Google Play.
-      </p>
-    </section>
-
-    <section>
-      <h2>👶 خصوصية الأطفال</h2>
-      <p>
-        اللعبة غير موجهة للأطفال دون سن ١٣ عاماً. نحن لا نجمع عن قصد معلومات شخصية من الأطفال.
-        إذا كنت تعتقد أن طفلاً قدّم لنا معلومات شخصية، يرجى التواصل معنا لحذفها.
-      </p>
-    </section>
-
-    <section>
-      <h2>🔐 أمان البيانات</h2>
-      <p>
-        يتم تخزين تقدم اللعبة والتفضيلات محلياً على جهازك باستخدام Unity PlayerPrefs، ولا تُرسل إلى خوادمنا.
-        جميع البيانات التي تجمعها خدمات الطرف الثالث تُنقل عبر اتصالات مشفرة (HTTPS).
-      </p>
-    </section>
-
-    <section>
-      <h2>🌍 حقوقك</h2>
-      <p>بحسب موقعك، قد يكون لديك الحق في:</p>
-      <ul>
-        <li>الوصول إلى البيانات الشخصية المجمّعة عنك</li>
-        <li>طلب حذف بياناتك</li>
-        <li>إلغاء جمع بيانات التحليلات (عبر إلغاء تثبيت التطبيق)</li>
-        <li>سحب موافقتك على الإعلانات المخصصة (عبر نافذة الموافقة في التطبيق)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>✏️ التغييرات على هذه السياسة</h2>
-      <p>
-        قد نحدّث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر التغييرات على هذه الصفحة مع تحديث التاريخ.
-        استمرارك في استخدام اللعبة بعد أي تغييرات يعني قبولك للسياسة الجديدة.
-      </p>
-    </section>
-
-    <section>
-      <h2>📬 تواصل معنا</h2>
-      <p>
-        إذا كان لديك أي استفسار حول سياسة الخصوصية، يمكنك التواصل معنا على:<br>
-        <a href="mailto:diaa.themaster@gmail.com">diaa.themaster@gmail.com</a>
-      </p>
-    </section>
-  </div>
-
+  <section class="hero container">
+    <img class="owl" src="owl.png" alt="">
+    <span class="badge-pill"><span class="ar">مجاني • آيفون وأندرويد</span><span class="en">Free • iOS & Android</span></span>
+    <h1><span class="ar">اكتشف الفروقات 🔍</span><span class="en">Find the Differences 🔍</span></h1>
+    <p class="tag"><span class="ar">لعبة ألغاز هادئة لاكتشاف الفروق بين صورتين متشابهتين. تنقّل بين فئات متنوعة من الكرتون والسيارات والطعام والحيوانات والمزيد، وتحدَّ نفسك مع المؤقّت واستعن بنظام التلميحات الذكي عند الحاجة. واجهة ثنائية اللغة بالعربية والإنجليزية يرافقك فيها بوم محقّق ودود.</span><span class="en">A cozy spot-the-difference puzzle game where you hunt for the visual differences between two similar pictures. Explore varied categories — cartoon, cars, food, animals and more — beat the clock with a timer, and use a smart hint system when you get stuck. A bilingual Arabic & English interface guided by a friendly detective-owl mascot.</span></p>
+    <div class="stores"><a class="store-btn" href="https://apps.apple.com/app/id1670190815" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-37 16.6-64.9 50.5-85.4-19-27.2-47.6-42.2-85.3-45.1-35.8-2.8-74.9 20.9-89.2 20.9-15.1 0-49.7-19.9-76.9-19.9C71.2 139.8 16 184.1 16 273.5c0 26.4 4.8 53.7 14.5 81.8 12.9 36.9 59.4 127.5 107.9 126 25.4-.6 43.3-18 76.3-18 32.1 0 48.7 18 76.9 18 49-0.7 91-83 103.2-120 -65.5-30.9-62-90.6-62-90.6zM258.1 90.3c30-35.6 27.3-68 26.4-79.6-26.6 1.5-57.3 18.1-74.7 38.5-19.2 21.8-30.5 48.7-28.1 78.1 28.8 2.2 54.9-12.7 76.4-37z"/></svg>
+        <span class="t"><small><span class="ar">متوفّر على</span><span class="en">Download on the</span></small><b>App Store</b></span>
+      </a> <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.tech4app.differences" target="_blank" rel="noopener">
+        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13.6c-7-7-17-9-26-5l245.7 245.7 1-19.7zm79.1 36.9-58.6-33.8-30 30 30 30 58.6-33.8c14.8-8.5 14.8-29.9 0-37.4zM73.6 8.6c-3.4 3.6-5.6 8.9-5.6 15.8v463.2c0 6.9 2.2 12.2 5.6 15.8l253.9-253.9L73.6 8.6zM78.6 503.4c9 4 19 2 26-5l220.7-220.7-1-19.7L78.6 503.4z"/></svg>
+        <span class="t"><small><span class="ar">متوفّر على</span><span class="en">Get it on</span></small><b>Google Play</b></span>
+      </a></div>
+  </section>
+  <section class="section"><div class="container">
+    <h2><span class="ar">لماذا ستحبّها</span><span class="en">Why you'll love it</span></h2>
+    <p class="sub"><span class="ar">كل ما تحتاجه للعب ممتع وهادئ في مكان واحد</span><span class="en">Everything you need for relaxed, rewarding play in one place</span></p>
+    <div class="grid">
+      <div class="feat">
+        <div class="ic" style="background:var(--terracotta)">🧩</div>
+        <h3><span class="ar">فئات ألغاز متنوّعة</span><span class="en">Many puzzle categories</span></h3>
+        <p><span class="ar">العب عبر مجموعة واسعة من الفئات: كرتون، ديكور داخلي، سيارات، طعام، منازل، أدوات، وحيوانات.</span><span class="en">Play across a wide range of categories: cartoon, interior, car, food, house, tools, and animals.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--teal)">🔍</div>
+        <h3><span class="ar">متعة اكتشاف الفروق</span><span class="en">Spot-the-difference fun</span></h3>
+        <p><span class="ar">قارن بين صورتين متشابهتين والتقط كل فرق خفي. ألغاز مصمّمة لتدريب عينك وتركيزك.</span><span class="en">Compare two similar pictures and catch every hidden difference. Puzzles crafted to sharpen your eye and focus.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--gold)">⏱️</div>
+        <h3><span class="ar">تحدّي المؤقّت</span><span class="en">Timer challenge</span></h3>
+        <p><span class="ar">سباق مع الوقت يضيف الإثارة لكل مستوى. كن سريعًا ودقيقًا لتحقيق أفضل النتائج.</span><span class="en">Race against the clock to add a thrill to every level. Be fast and accurate to earn your best results.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--green)">💡</div>
+        <h3><span class="ar">نظام تلميحات ذكي</span><span class="en">Smart hint system</span></h3>
+        <p><span class="ar">عالق في فرق صعب؟ استخدم تلميحًا ليرشدك إلى المكان الصحيح ويبقيك في تدفّق اللعب.</span><span class="en">Stuck on a tricky difference? Use a hint to point you to the right spot and keep you in the flow.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--olive)">🌍</div>
+        <h3><span class="ar">عربي وإنجليزي</span><span class="en">Bilingual Arabic & English</span></h3>
+        <p><span class="ar">واجهة كاملة بالعربية والإنجليزية مع دعم الكتابة من اليمين إلى اليسار. بدّل لغتك المفضّلة بضغطة واحدة.</span><span class="en">A complete Arabic and English interface with full right-to-left support. Switch to your preferred language in one tap.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--wordmark)">⭐</div>
+        <h3><span class="ar">تقدّم ونجوم</span><span class="en">Level progression & stars</span></h3>
+        <p><span class="ar">تقدّم عبر المستويات واجمع النجوم على أدائك. لعبة مجانية مدعومة بالإعلانات مع اشتراك اختياري لإزالتها.</span><span class="en">Advance through levels and collect stars for your performance. Free and ad-supported, with an optional subscription to remove ads.</span></p>
+      </div>
+    </div>
+  </div></section>
 </main>
 
-<script>
-  function setLang(lang) {
-    document.body.classList.toggle('ar', lang === 'ar');
-    document.querySelectorAll('.lang-switch button').forEach((btn, i) => {
-      btn.classList.toggle('active', (i === 0 && lang === 'en') || (i === 1 && lang === 'ar'));
-    });
-  }
-</script>
+<footer class="site">
+  <div class="container">
+    <nav>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Use</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+    </nav>
+    <span class="cp">© 2026 Tech4App — <span class="ar">جميع الحقوق محفوظة</span><span class="en">All rights reserved</span></span>
+  </div>
+</footer>
+
 </body>
 </html>
