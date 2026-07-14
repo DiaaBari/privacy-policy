@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRISON LUDO — لودو الهروب</title>
+<meta name="description" content="PRISON LUDO: a prison-themed Ludo game with two dice and a rising Guard Attention meter, for iOS &amp; Android. لودو الهروب: لعبة لودو بحجرَي نرد وشريط انتباه السجّان.">
+<link rel="icon" type="image/png" href="app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Oswald:wght@400;500;600&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand"><img class="logo" src="app-icon.png" alt="">
+      <span class="ar">لودو الهروب</span><span class="en">PRISON LUDO</span></div>
+    <nav class="site">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button class="langbtn" onclick="toggleLang()"><span class="ar">English</span><span class="en">العربية</span></button>
+    </nav>
+  </div>
+</header>
+<div class="hazard"></div>
+
+<main>
+  <section class="hero container">
+    <img class="appicon" src="app-icon.png" alt="">
+    <span class="badge-pill"><span class="ar">مجاني • آيفون وأندرويد</span><span class="en">Free • iOS &amp; Android</span></span>
+    <h1><span class="ar">لودو الهروب 🎲</span><span class="en">PRISON LUDO 🎲</span></h1>
+    <p class="tag"><span class="ar">لودو كما لم تلعبه من قبل: <strong>حجرا نرد بدل واحد</strong> — حرّك جنديين معاً أو اجمع الرقمين لجندي واحد. الرقم ٦ يهرّب جندياً من الزنزانة، و٦+٦ يمنحك دوراً إضافياً. وطوال الوقت يرتفع <strong>شريط انتباه السجّان</strong>… فإذا امتلأ انطلق الإنذار وعاد أبعد جندي مكشوف إلى زنزانته. أوصل جنودك الأربعة إلى المركز قبل خصومك — أول زنزانة تكتمل تفوز.</span><span class="en">Ludo like you have never played it: <strong>two dice instead of one</strong> — move two soldiers at once, or add the numbers for a single soldier. A 6 breaks a soldier out of his cell, and 6+6 earns you another roll. All the while the <strong>Guard Attention meter</strong> keeps rising — when it fills, the alarm goes off and the most exposed soldier is dragged back to his cell. Get all four of your soldiers to the center before your rivals — the first cell block to finish wins.</span></p>
+    <div class="stores">
+      <span class="store-btn soon">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-37 16.6-64.9 50.5-85.4-19-27.2-47.6-42.2-85.3-45.1-35.8-2.8-74.9 20.9-89.2 20.9-15.1 0-49.7-19.9-76.9-19.9C71.2 139.8 16 184.1 16 273.5c0 26.4 4.8 53.7 14.5 81.8 12.9 36.9 59.4 127.5 107.9 126 25.4-.6 43.3-18 76.3-18 32.1 0 48.7 18 76.9 18 49-0.7 91-83 103.2-120 -65.5-30.9-62-90.6-62-90.6zM258.1 90.3c30-35.6 27.3-68 26.4-79.6-26.6 1.5-57.3 18.1-74.7 38.5-19.2 21.8-30.5 48.7-28.1 78.1 28.8 2.2 54.9-12.7 76.4-37z"/></svg>
+        <span class="t"><small><span class="ar">قريباً على</span><span class="en">Coming soon to the</span></small><b>App Store</b></span>
+      </span>
+      <span class="store-btn soon">
+        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13.6c-7-7-17-9-26-5l245.7 245.7 1-19.7zm79.1 36.9-58.6-33.8-30 30 30 30 58.6-33.8c14.8-8.5 14.8-29.9 0-37.4zM73.6 8.6c-3.4 3.6-5.6 8.9-5.6 15.8v463.2c0 6.9 2.2 12.2 5.6 15.8l253.9-253.9L73.6 8.6zM78.6 503.4c9 4 19 2 26-5l220.7-220.7-1-19.7L78.6 503.4z"/></svg>
+        <span class="t"><small><span class="ar">قريباً على</span><span class="en">Coming soon to</span></small><b>Google Play</b></span>
+      </span>
+    </div>
+    <p class="soon-note"><span class="ar">اللعبة قيد المراجعة قبل الإطلاق — ستُضاف روابط المتجر هنا فور نشرها.</span><span class="en">The game is in pre-launch review — store links will appear here as soon as it goes live.</span></p>
+  </section>
+
+  <section class="section"><div class="container">
+    <h2><span class="ar">لماذا ستحبّها</span><span class="en">Why you'll love it</span></h2>
+    <p class="sub"><span class="ar">لودو تعرفه… بقواعد تقلب الطاولة</span><span class="en">The Ludo you know — with rules that change everything</span></p>
+    <div class="grid">
+      <div class="feat">
+        <div class="ic" style="background:var(--bone)">🎲</div>
+        <h3><span class="ar">حجرا نرد، لا حجر واحد</span><span class="en">Two dice, not one</span></h3>
+        <p><span class="ar">في كل دور ترمي الحجرين معاً: حجر لكل جندي فتحرّك اثنين دفعة واحدة، أو اجمع الرقمين لتدفع جندياً واحداً مسافة أطول. القرار لك في كل رمية.</span><span class="en">Every turn you roll both dice: one die per soldier to move two at once, or add the numbers to push a single soldier further. The decision is yours on every roll.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--red)">🚨</div>
+        <h3><span class="ar">شريط انتباه السجّان</span><span class="en">The Guard Attention meter</span></h3>
+        <p><span class="ar">الوقت ليس في صفّك: الشريط يمتلئ مع كل دقيقة وكل دور. وعندما يصل إلى ١٠٠٪ ينطلق الإنذار ويعود أبعد جندي غير محميّ في اللوح كلّه إلى زنزانته — أحياناً يكون جنديك أنت.</span><span class="en">Time is not on your side: the meter fills with every minute and every turn. At 100% the alarm sounds and the most advanced unprotected soldier on the whole board is thrown back into his cell — sometimes that soldier is yours.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--gold)">🔓</div>
+        <h3><span class="ar">٦ يفتح الزنزانة</span><span class="en">A 6 opens the cell</span></h3>
+        <p><span class="ar">لا يخرج جندي إلى المسار إلا برقم ٦. والدبل ستة (٦+٦) — أو تهريب جندي جديد — يمنحك رمية إضافية فوراً.</span><span class="en">No soldier reaches the track without a 6. And a double six (6+6) — or breaking out a new soldier — instantly earns you another roll.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--teal)">🎯</div>
+        <h3><span class="ar">الرقم المضبوط للمركز</span><span class="en">Exact roll to the center</span></h3>
+        <p><span class="ar">قرب باب المركز لا مجال للتقريب: الحجر الأكبر من الخطوات المتبقية لا يُلعب على ذلك الجندي — المساوي أو الأقل فقط. آخر خطوة هي أصعب خطوة.</span><span class="en">Near the center door there is no rounding: a die larger than the steps remaining cannot be played on that soldier — only equal or less. The last step is the hardest one.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--team-a)">👥</div>
+        <h3><span class="ar">من ٢ إلى ٤ زنزانات</span><span class="en">2 to 4 cell blocks</span></h3>
+        <p><span class="ar">العب ضد بوتات ذكية، أو مرّر الجهاز بين أصدقائك: اختر لكل زنزانة إن كان يقودها لاعب أو بوت — من لاعبَين حتى أربعة.</span><span class="en">Play against smart bots, or pass the device around with friends: choose for each cell block whether a human or a bot runs it — from two players up to four.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--team-d)">📴</div>
+        <h3><span class="ar">تعمل دون إنترنت</span><span class="en">Plays offline</span></h3>
+        <p><span class="ar">بلا حساب، وبلا تسجيل دخول، وبلا خوادم. اللعبة تعمل بالكامل على جهازك، وواجهتها عربية أصيلة من اليمين إلى اليسار.</span><span class="en">No account, no login, no servers. The game runs entirely on your device, with a native right-to-left Arabic interface.</span></p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-top:0"><div class="container">
+    <h2><span class="ar">مجانية — والإعلانات باختيارك</span><span class="en">Free — and the ads are your choice</span></h2>
+    <p class="sub"><span class="ar">شفافية كاملة حول كيف تُموَّل اللعبة</span><span class="en">Full transparency about how the game is funded</span></p>
+    <div class="grid">
+      <div class="feat">
+        <div class="ic" style="background:var(--green)">🚫</div>
+        <h3><span class="ar">بلا لافتات إعلانية</span><span class="en">No banner ads</span></h3>
+        <p><span class="ar">لا توجد لافتات تلتصق بالشاشة أثناء اللعب، ولا إعلان يقاطعك وأنت تخطّط لحركتك.</span><span class="en">No banners stuck to your screen, and nothing interrupts you while you are planning your move.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--brass)">⏸️</div>
+        <h3><span class="ar">إعلان بعد المباراة فقط</span><span class="en">Ads only after a match</span></h3>
+        <p><span class="ar">يظهر إعلان كامل الشاشة أحياناً بعد شاشة النتيجة فقط، ولا يظهر إطلاقاً في مبارياتك الثلاث الأولى.</span><span class="en">A full-screen ad appears occasionally after the result screen only, and never during your first three matches.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--gold)">💰</div>
+        <h3><span class="ar">الرشوة: إعلان تطلبه أنت</span><span class="en">The bribe: an ad you ask for</span></h3>
+        <p><span class="ar">حين يتجاوز شريط السجّان النصف يظهر زر «رشوة»: شاهد إعلاناً قصيراً باختيارك ليهبط انتباه السجّان ٣٠٪. لا يُعرض عليك أبداً دون أن تضغطه.</span><span class="en">When the guard meter passes halfway, a "Bribe" button appears: watch a short ad — entirely by choice — to drop the guard's attention by 30%. It is never shown unless you tap it.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:var(--orange)">💳</div>
+        <h3><span class="ar">إزالة الإعلانات بشراء واحد</span><span class="en">Remove ads with one purchase</span></h3>
+        <p><span class="ar">عملية شراء واحدة دائمة (بلا اشتراكات) تزيل الإعلانات بين المباريات. أما الرشوة فتبقى متاحة لمن يريدها وحده.</span><span class="en">A single permanent purchase (no subscriptions) removes the between-match ads. The bribe stays available only for those who choose it.</span></p>
+      </div>
+    </div>
+  </div></section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <nav>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Use</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+    </nav>
+    <span class="cp">© 2026 Mersal — <span class="ar">جميع الحقوق محفوظة</span><span class="en">All rights reserved</span></span>
+  </div>
+</footer>
+
+</body>
+</html>

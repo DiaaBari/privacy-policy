@@ -1,0 +1,157 @@
+/* "PRISON LUDO / لودو الهروب" — "Cell Block" dark prison theme (bilingual AR/EN).
+   Palette mirrors the game's PrisonColors design tokens. */
+:root{
+  --bg-top:#1c1811;   --bg-bottom:#141019; --board:#241f18;
+  --card:#221d17;     --card-2:#1e1a14;
+  --cream:#f2ece0;    --body:#e7dfce;      --sub:#c9c1af;
+  --muted:#948d7f;    --dim:#6b6456;
+  --orange:#e0752b;   --orange-deep:#c85f1c; --orange-edge:#8f3f12;
+  --gold:#f0c04a;     --gold-deep:#c9992e;   --brass:#b98a3f;
+  --red:#c23a3a;      --green:#7ec98f;       --teal:#2f8d86;
+  --bone:#efe7d2;
+  --team-a:#df7327;   --team-b:#2f8d86;    --team-c:#c23a3a;  --team-d:#d6a42b;
+  --line:#3a3226;     --line-soft:rgba(240,192,74,.14);
+  --shadow:0 14px 34px rgba(0,0,0,.45);
+  --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'IBM Plex Sans Arabic',system-ui,'Segoe UI',Tahoma,sans-serif;
+  background:linear-gradient(178deg,var(--bg-top) 0%,var(--bg-bottom) 100%) fixed;
+  color:var(--body);
+  line-height:1.9; font-size:18px;
+}
+h1,h2,h3{font-family:'Reem Kufi','IBM Plex Sans Arabic',sans-serif;font-weight:600;color:var(--cream)}
+html[data-lang="en"] h1,html[data-lang="en"] h2,html[data-lang="en"] h3{font-family:'Oswald','IBM Plex Sans Arabic',sans-serif;font-weight:600;letter-spacing:.4px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:var(--cream)}
+.container{max-width:920px;margin:0 auto;padding:0 22px}
+
+/* ── Header ── */
+header.site{
+  background:rgba(20,16,25,.86); position:sticky; top:0; z-index:10;
+  border-bottom:1px solid var(--line); backdrop-filter:blur(8px);
+}
+header.site .container{display:flex;align-items:center;justify-content:space-between;height:70px;gap:10px}
+.brand{display:flex;align-items:center;gap:11px;font-size:21px;color:var(--cream);
+  font-family:'Reem Kufi','IBM Plex Sans Arabic',sans-serif;font-weight:600}
+html[data-lang="en"] .brand{font-family:'Oswald',sans-serif;letter-spacing:1.5px}
+.brand img.logo{width:42px;height:42px;flex:0 0 auto;border-radius:10px;border:1px solid var(--line)}
+nav.site{display:flex;align-items:center;flex-wrap:wrap}
+nav.site a{color:var(--sub);margin-inline-start:18px;font-weight:500}
+nav.site a:hover{color:var(--gold);text-decoration:none}
+.langbtn{background:linear-gradient(180deg,var(--orange),var(--orange-deep));color:#1a120a;border:0;
+  border-radius:999px;padding:7px 16px;font-family:'Oswald','IBM Plex Sans Arabic',sans-serif;font-weight:600;
+  font-size:15px;cursor:pointer;margin-inline-start:16px;line-height:1.5;
+  box-shadow:0 3px 0 var(--orange-edge);transition:transform .12s,box-shadow .12s}
+.langbtn:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--orange-edge)}
+
+/* ── Hazard stripe (the caution tape from the app icon) ── */
+.hazard{height:10px;
+  background:repeating-linear-gradient(-45deg,var(--orange) 0 14px,#100d09 14px 28px);
+  opacity:.9}
+
+/* ── Hero ── */
+.hero{text-align:center;padding:60px 0 46px}
+.hero .appicon{width:132px;height:132px;margin-bottom:16px;border-radius:28px;border:1px solid var(--line);
+  box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.hero h1{font-size:46px;line-height:1.35;margin-bottom:14px;color:var(--cream)}
+.hero .tag{font-size:20px;color:var(--sub);max-width:680px;margin:0 auto 28px}
+.badge-pill{display:inline-block;background:rgba(240,192,74,.08);border:1px solid var(--brass);
+  color:var(--gold);border-radius:999px;padding:5px 16px;font-weight:600;font-size:15px;margin-bottom:20px}
+
+/* ── Store buttons (soon = not yet published) ── */
+.stores{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.store-btn{display:inline-flex;align-items:center;gap:12px;background:var(--card);color:var(--cream);
+  border:1px solid var(--line);border-radius:16px;padding:12px 22px;min-width:215px;
+  transition:transform .15s,border-color .15s;box-shadow:var(--shadow)}
+.store-btn:hover{transform:translateY(-3px);text-decoration:none;color:var(--cream);border-color:var(--brass)}
+.store-btn svg{width:30px;height:30px;flex:0 0 auto;fill:var(--cream)}
+.store-btn .t{display:flex;flex-direction:column;text-align:start;line-height:1.3}
+.store-btn .t small{font-size:12px;color:var(--muted);font-weight:400}
+.store-btn .t b{font-size:19px;font-family:'Oswald',sans-serif;font-weight:500}
+.store-btn.soon{opacity:.55;cursor:default}
+.store-btn.soon:hover{transform:none;border-color:var(--line)}
+.soon-note{color:var(--muted);font-size:15px;margin-top:14px}
+
+/* ── Feature grid ── */
+.section{padding:50px 0}
+.section h2{font-size:32px;text-align:center;margin-bottom:8px}
+.section .sub{text-align:center;color:var(--muted);margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.feat .ic{width:54px;height:54px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+  font-size:27px;margin-bottom:14px;color:#141019;border:1px solid rgba(0,0,0,.25)}
+.feat h3{font-size:21px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:16px}
+
+/* ── Document pages (privacy / terms / support) ── */
+.doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:40px 38px;margin:34px 0}
+.doc h1{font-size:36px;margin-bottom:6px}
+.doc .updated{color:var(--muted);font-size:15px;margin-bottom:26px}
+.doc h2{font-size:23px;color:var(--orange);margin:30px 0 10px}
+.doc h2:nth-of-type(3n){color:var(--gold)}
+.doc h2:nth-of-type(3n+2){color:var(--teal)}
+.doc p,.doc li{color:var(--sub);margin-bottom:12px}
+.doc ul,.doc ol{padding-inline-start:26px;margin-bottom:12px}
+.doc li::marker{color:var(--brass)}
+.doc .note{background:rgba(240,192,74,.07);border-inline-start:4px solid var(--gold);
+  border-radius:12px;padding:14px 18px;margin:18px 0}
+.doc .note p,.doc .note li{color:var(--body)}
+.doc a{font-weight:600}
+
+/* ── FAQ ── */
+.faq{background:var(--card-2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+  padding:20px 24px;margin-bottom:14px}
+.faq h3{font-size:19px;color:var(--gold);margin-bottom:6px}
+.faq p{color:var(--muted);font-size:16px;margin:0}
+
+/* ── Contact card ── */
+.contact{background:linear-gradient(135deg,var(--orange-edge),#1c1811 70%);border:1px solid var(--brass);
+  color:var(--cream);border-radius:var(--radius);padding:30px;text-align:center;margin:24px 0}
+.contact h2{color:var(--cream);margin-bottom:8px}
+.contact p{color:var(--body);margin-bottom:6px}
+.contact a{color:var(--gold);font-weight:700;text-decoration:underline}
+
+/* ── Contact form ── */
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:32px 34px;margin:24px 0}
+.formcard h2{font-size:25px;margin-bottom:6px}
+.formcard .sub{color:var(--muted);margin-bottom:22px;font-size:16px}
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:15px;margin-bottom:6px;color:var(--cream)}
+.field input,.field select,.field textarea{
+  width:100%;background:#171310;border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;font-family:inherit;font-size:16px;color:var(--cream);transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(224,117,43,.18)}
+.field textarea{min-height:140px;resize:vertical}
+.btn{display:inline-block;background:linear-gradient(180deg,var(--orange),var(--orange-deep));color:#1a120a;
+  border:0;border-radius:999px;padding:13px 34px;font-family:'Oswald','IBM Plex Sans Arabic',sans-serif;
+  font-weight:600;font-size:17px;cursor:pointer;box-shadow:0 4px 0 var(--orange-edge);
+  transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--orange-edge)}
+.form-hint{color:var(--muted);font-size:14px;margin-top:12px}
+
+/* ── Footer ── */
+footer.site{background:#171310;border-top:1px solid var(--line);padding:34px 0;margin-top:40px}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer.site nav a{color:var(--muted);margin-inline-end:18px;font-weight:500}
+footer.site nav a:hover{color:var(--gold)}
+footer.site .cp{color:var(--dim);font-size:15px}
+
+@media(max-width:600px){
+  .hero h1{font-size:33px}.hero .tag{font-size:18px}
+  nav.site a{margin-inline-start:12px;font-size:15px}
+  .doc,.formcard{padding:28px 22px}
+  .formrow{grid-template-columns:1fr}
+  header.site .container{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+}
+
+/* ── Language toggle (Arabic default / English) ── */
+html[data-lang="ar"] .en{display:none !important}
+html[data-lang="en"] .ar{display:none !important}

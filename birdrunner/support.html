@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Bird Rescue | الدعم</title>
+<meta name="description" content="Support, FAQ, and contact form for the Bird Rescue game. الدعم والأسئلة الشائعة ونموذج التواصل للعبة إنقاذ العصافير.">
+<link rel="icon" type="image/png" href="app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand"><img class="logo" src="app-icon.png" alt="">
+      <span class="ar">إنقاذ العصافير</span><span class="en">Bird Rescue</span></div>
+    <nav class="site">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button class="langbtn" onclick="toggleLang()"><span class="ar">English</span><span class="en">العربية</span></button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="doc">
+    <h1><span class="ar">الدعم والمساعدة</span><span class="en">Support &amp; Help</span></h1>
+    <p class="updated"><span class="ar">نحن هنا لمساعدتك — نرد عادةً خلال ٤٨ ساعة عمل.</span><span class="en">We're here to help — most replies within 48 business hours.</span></p>
+    <p><span class="ar">قبل التواصل معنا، نرجو إلقاء نظرة على الأسئلة الشائعة أدناه، فقد تجد إجابة سؤالك على الفور.</span><span class="en">Before contacting us, please take a look at the FAQ below — you may find an instant answer to your question.</span></p>
+  </article>
+
+  <section class="section" style="padding-top:0">
+    <div class="faq">
+      <h3><span class="ar">كيف ألعب؟ ما هي القاعدة الأساسية؟</span><span class="en">How do I play? What's the core rule?</span></h3>
+      <p><span class="ar">اسحب إصبعك لقطع حبل. كل ما ينفصل عن الغصن يسقط: إذا انفصل عصفور أزرق فإنه يطير حرًّا (وهذا هدفك — تحرير كل العصافير الزرقاء)، أما إذا انفصل صقر فإنه ينقضّ على أقرب عصفور وتخسر المستوى. فكّر في ترتيب القصّات قبل أن تبدأ: أحيانًا قصّة واحدة تحرّر عصفورين معًا. استثناء لطيف: في المستويات المتقدّمة قد ترى صقرًا معلّقًا ببالون 🎈 — هذا آمن، فإن حرّرته طار مع بالونه بعيدًا ولم يؤذِ أحدًا.</span><span class="en">Swipe to cut a rope. Anything that gets disconnected from the branch comes loose: if a blue bird is freed it flies away (that's your goal — free every blue bird), but if a hawk is freed it dives at the nearest bird and you lose the level. Think about the order of your cuts before you start — sometimes a single cut frees two birds at once. One friendly exception: in later levels you may see a hawk tied to a balloon 🎈 — that one is safe. Set it loose and it simply floats away without harming anyone.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ما هي المستويات الذهبية؟</span><span class="en">What are the golden levels?</span></h3>
+      <p><span class="ar">ابتداءً من المستوى ٧٠، يأتي كل مستوى عاشر "ذهبيًّا": يظهر لك عدّاد مقصّ في الأعلى لأن عدد القصّات المسموح بها محدود (الحل الأمثل زائد قصّة واحدة فقط). إن نفدت قصّاتك قبل تحرير كل العصافير خسرت المستوى — وهذه طريقة الخسارة الثانية الوحيدة في اللعبة إلى جانب إطلاق صقر. وفي المقابل، نقاط المستوى الذهبي مضاعفة.</span><span class="en">From level 70 onward, every tenth level is "golden": a scissors counter appears at the top because your number of cuts is limited (the optimal solution plus exactly one). If you run out of cuts before freeing all the birds, you lose the level — this is the only second way to lose besides setting a hawk loose. In exchange, a golden level's score is doubled.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ظهرت لي رسالة "ما عاد في حل" — ماذا تعني؟</span><span class="en">I got a "No way to win" message — what does that mean?</span></h3>
+      <p><span class="ar">بعض القصّات آمنة ظاهريًا (لا تُطلق صقرًا) لكنها تترك المستوى بلا حلّ ممكن — نسمّيها "قصّة مسمومة". اللعبة تتحقّق تلقائيًا بعد كل قصّة، وإن أغلقت الطريق أخبرتك فورًا بدل أن تضيّع وقتك في محاولة مستحيلة. عندها يمكنك إعادة المستوى مجانًا (وهذا لا يكسر سلسلة انتصاراتك)، أو التراجع عن آخر قصّة.</span><span class="en">Some cuts look safe (they don't free a hawk) but quietly leave the level unsolvable — we call these "poisoned cuts". The game checks automatically after every cut and, if the path has closed, tells you immediately instead of letting you waste time on an impossible board. You can then restart the level for free (this does not break your win streak), or undo your last cut.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف يعمل التلميح والتراجع؟ وهل هما مجانيان؟</span><span class="en">How do the hint and undo work? Are they free?</span></h3>
+      <p><span class="ar">كلاهما اختياري تمامًا ويُتاح مقابل مشاهدة إعلان فيديو قصير باختيارك أنت. "التلميح" يضيء بالذهبي الحبل الصحيح الذي يقودك إلى الحل — ولو كان اللوح بلا حل أصلًا فلن نعرض عليك إعلانًا ولن نأخذ منك شيئًا، بل نخبرك بذلك مباشرة. و"التراجع" يعيد آخر قصّة قطعتها، ويعمل حتى بعد الخسارة عبر زر "أكمل" في شاشة الخسارة. وإن لم يكن هناك إعلان محمّل في تلك اللحظة، يخبرك زر التلميح/التراجع برسالة "الإعلان مش جاهز — جرّب بعد شوي" ولا يأخذ منك شيئًا؛ أما زر "أكمل" في شاشة الخسارة فلا يظهر أصلًا إلا إذا كان هناك إعلان جاهز فعلًا.</span><span class="en">Both are entirely optional and offered in exchange for watching a short video ad — by your choice. "Hint" lights up in gold the correct rope that leads to a solution; and if the board is already unsolvable we will not show you an ad or take anything from you — we tell you straight away instead. "Undo" reverses your last cut, and works even after losing, via the "Continue" button on the lose screen. If no ad happens to be loaded at that moment, the Hint/Undo button simply tells you "Ad not ready — try again shortly" and takes nothing from you; the "Continue" button on the lose screen is not shown at all unless an ad is genuinely ready.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ما هي الإعلانات التي تظهر، وكيف أزيلها؟</span><span class="en">What ads appear, and how do I remove them?</span></h3>
+      <p><span class="ar">اللعبة مجانية ومدعومة بإعلانات Google AdMob، وتقتصر على نوعين فقط: إعلان بيني (كامل الشاشة) يظهر أحيانًا بين المستويات بعد شاشة النتيجة، وإعلان مكافأة اختياري تختار أنت مشاهدته للحصول على تلميح أو تراجع. لا توجد لافتات إعلانية إطلاقًا، ولا يقاطعك إعلان أثناء اللعب، ولا تظهر أي إعلانات بينية في المستويات الأولى. أما إعلان المكافأة فمتاح في أي مستوى — لكنه لا يظهر أبدًا إلا إذا ضغطت أنت زر التلميح أو التراجع. لإزالة الإعلانات البينية نهائيًا، اضغط "إزالة الإعلانات" في شاشة البداية — عملية شراء واحدة دائمة بلا اشتراك.</span><span class="en">The game is free and supported by Google AdMob ads, limited to two kinds only: an interstitial (full-screen) ad that appears occasionally between levels after the result screen, and an optional rewarded ad that you choose to watch for a hint or an undo. There are no banner ads at all, nothing interrupts you during play, and no interstitial ads appear during the first levels. The rewarded ad is available on any level — but it never appears unless you tap the Hint or Undo button yourself. To remove the interstitial ads permanently, tap "Remove ads" on the home screen — a single one-time purchase, no subscription.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">اشتريت إزالة الإعلانات ولكنها لم تُفعَّل / غيّرت جهازي</span><span class="en">I bought Remove ads but it isn't active / I changed my device</span></h3>
+      <p><span class="ar">عملية الشراء مرتبطة بحساب المتجر (Apple ID أو حساب Google) وليس بالجهاز. سجّل الدخول على الجهاز الجديد بنفس الحساب الذي اشتريت به، ثم افتح شاشة البداية واضغط "استعادة المشتريات" — ستُستعاد إزالة الإعلانات مباشرةً. إن لم تُفعَّل بعد ذلك، تأكّد من اتصالك بالإنترنت وأعد المحاولة، أو راسلنا مرفقًا إيصال الشراء من المتجر.</span><span class="en">The purchase is tied to your store account (Apple ID or Google account), not to your device. Sign in on the new device with the same account you purchased with, open the home screen, and tap "Restore purchases" — ad removal will be restored right away. If it still isn't active, check your internet connection and try again, or email us with your store receipt.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">هل ما زلت أرى إعلانات المكافأة بعد الشراء؟</span><span class="en">Do I still see rewarded ads after purchasing?</span></h3>
+      <p><span class="ar">نعم، لكنها لن تُعرض عليك أبدًا دون طلبك. الشراء يزيل الإعلانات البينية الإجبارية بين المستويات. أما إعلانات المكافأة فهي أزرار تضغطها أنت باختيارك لتحصل على تلميح أو تراجع — أبقيناها متاحة لأنها منفعة لك، لا إزعاجًا. إن لم تضغط عليها فلن ترى إعلانًا أبدًا.</span><span class="en">Yes, but they are never shown to you unless you ask. The purchase removes the forced interstitial ads between levels. Rewarded ads are buttons that you tap by choice to get a hint or an undo — we kept them available because they benefit you, not because they interrupt you. If you never tap them, you will never see an ad.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">هل يُحفظ تقدّمي؟ وهل ينتقل بين الأجهزة؟</span><span class="en">Is my progress saved? Does it move between devices?</span></h3>
+      <p><span class="ar">يُحفظ تقدّمك (المستوى الذي وصلت إليه، النجوم، النقاط) محليًا على جهازك فقط، ولا توجد مزامنة سحابية ولا حساب لتسجيل الدخول — وهذا يعني أن اللعبة لا تجمع عنك أي بيانات، لكنه يعني أيضًا أن التقدّم لا ينتقل تلقائيًا بين الأجهزة وقد يُفقد إذا حذفت اللعبة. أما شراء إزالة الإعلانات فمرتبط بحساب المتجر ويمكن استعادته على أي جهاز.</span><span class="en">Your progress (level reached, stars, score) is stored locally on your device only. There is no cloud sync and no login account — which means the game collects no data about you, but it also means progress does not transfer automatically between devices and may be lost if you delete the game. The Remove ads purchase, however, is tied to your store account and can be restored on any device.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف أغيّر اللغة أو أكتم الصوت؟</span><span class="en">How do I change the language or mute the sound?</span></h3>
+      <p><span class="ar">من شاشة البداية: زر اللغة في الأسفل يبدّل بين العربية والإنجليزية فورًا (وتُحفظ لغتك المفضّلة)، وزر الصوت بجانبه يكتم أو يعيد تشغيل الأصوات.</span><span class="en">From the home screen: the language button at the bottom switches instantly between Arabic and English (your preference is saved), and the sound button next to it mutes or unmutes the audio.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف أسحب موافقتي على الإعلانات المخصّصة؟</span><span class="en">How do I withdraw my consent for personalized ads?</span></h3>
+      <p><span class="ar">إذا كنت في منطقة تتطلّب موافقة (مثل الاتحاد الأوروبي والمملكة المتحدة)، سيظهر لك زر "خيارات الخصوصية" في شاشة البداية، ويمكنك منه تعديل موافقتك أو سحبها في أي وقت — سواء وافقت في البداية أو رفضت. وعلى Android يمكنك أيضًا حذف معرّفك الإعلاني أو إعادة ضبطه من الإعدادات ← Google ← الإعلانات. أما على iOS فلا يلزمك شيء: اللعبة لا تطلب إذن التتبّع (ATT) ولا تتتبّعك أصلًا.</span><span class="en">If you are in a region that requires consent (such as the EU and the UK), a "Privacy options" button appears on the home screen where you can change or withdraw your consent at any time — whether you consented initially or declined. On Android you can also delete or reset your advertising identifier from Settings → Google → Ads. On iOS nothing is needed: the game does not request tracking (ATT) permission and does not track you in the first place.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف أبلّغ عن خطأ أو مستوى لا يمكن حلّه؟</span><span class="en">How do I report a bug or an unsolvable level?</span></h3>
+      <p><span class="ar">راسلنا على <a href="mailto:mohammedalshoibaki@gmail.com">mohammedalshoibaki@gmail.com</a> أو استخدم نموذج التواصل أدناه. لمساعدتنا في حلّ المشكلة بسرعة، يُرجى ذكر طراز جهازك ونظام التشغيل وإصداره، و<strong>رقم المستوى</strong> الذي ظهرت فيه المشكلة، ووصف لما حدث ولقطة شاشة إن أمكن. رقم المستوى مهم جدًّا لأن المستويات تُولَّد بشكل حتمي — أي أن الرقم وحده يكفينا لإعادة إنتاج نفس المستوى بالضبط عندنا.</span><span class="en">Email us at <a href="mailto:mohammedalshoibaki@gmail.com">mohammedalshoibaki@gmail.com</a> or use the contact form below. To help us fix it quickly, please include your device model, OS and version, the <strong>level number</strong> where it happened, a description of what occurred, and a screenshot if possible. The level number matters a lot: levels are generated deterministically, so the number alone lets us reproduce the exact same level on our side.</span></p>
+    </div>
+
+    <!-- contact form -->
+    <div class="formcard">
+      <h2><span class="ar">تواصل معنا</span><span class="en">Contact Us</span></h2>
+      <p class="sub"><span class="ar">لم تجد إجابتك؟ أرسل لنا رسالة وسنعود إليك في أقرب وقت.</span><span class="en">Didn't find your answer? Send us a message and we'll get back to you soon.</span></p>
+      <form id="supportForm">
+        <div class="formrow">
+          <div class="field"><label for="sf-name"><span class="ar">الاسم</span><span class="en">Name</span></label><input id="sf-name" name="name" type="text" required></div>
+          <div class="field"><label for="sf-email"><span class="ar">بريدك الإلكتروني</span><span class="en">Your email</span></label><input id="sf-email" name="email" type="email" required></div>
+        </div>
+        <div class="field"><label for="sf-subject"><span class="ar">الموضوع</span><span class="en">Subject</span></label><input id="sf-subject" name="subject" type="text" required></div>
+        <div class="field"><label for="sf-message"><span class="ar">رسالتك</span><span class="en">Your message</span></label><textarea id="sf-message" name="message" required></textarea></div>
+        <button class="btn" type="submit"><span class="ar">إرسال</span><span class="en">Send message</span></button>
+        <p class="form-hint"><span class="ar">سيفتح هذا تطبيق البريد لديك لإرسال الرسالة إلينا.</span><span class="en">This opens your email app to send us the message.</span></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <nav>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Use</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+    </nav>
+    <span class="cp">© 2026 Mersal — <span class="ar">جميع الحقوق محفوظة</span><span class="en">All rights reserved</span></span>
+  </div>
+</footer>
+<script>
+(function () {
+  var f = document.getElementById('supportForm');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var body = 'Name: ' + v('sf-name') + '\nEmail: ' + v('sf-email') + '\n\n' + v('sf-message');
+    window.location.href = 'mailto:mohammedalshoibaki@gmail.com'
+      + '?subject=' + encodeURIComponent('[Bird Rescue Support] ' + v('sf-subject'))
+      + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
