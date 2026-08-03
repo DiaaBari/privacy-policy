@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — SAVE THE PRISONER | الدعم</title>
+<meta name="description" content="Support, FAQ, and contact form for the SAVE THE PRISONER game. الدعم والأسئلة الشائعة ونموذج التواصل للعبة أنقذ السجين.">
+<link rel="icon" type="image/png" href="app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Oswald:wght@400;500;600&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand"><img class="logo" src="app-icon.png" alt="">
+      <span class="ar">أنقذ السجين</span><span class="en">SAVE THE PRISONER</span></div>
+    <nav class="site">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button class="langbtn" onclick="toggleLang()"><span class="ar">English</span><span class="en">العربية</span></button>
+    </nav>
+  </div>
+</header>
+<div class="hazard"></div>
+
+<main class="container">
+  <article class="doc">
+    <h1><span class="ar">الدعم والمساعدة</span><span class="en">Support &amp; Help</span></h1>
+    <p class="updated"><span class="ar">نحن هنا لمساعدتك — نرد عادةً خلال ٤٨ ساعة عمل.</span><span class="en">We're here to help — most replies within 48 business hours.</span></p>
+    <p><span class="ar">قبل التواصل معنا، نرجو إلقاء نظرة على الأسئلة الشائعة أدناه، فقد تجد إجابة سؤالك على الفور.</span><span class="en">Before contacting us, please take a look at the FAQ below — you may find an instant answer to your question.</span></p>
+  </article>
+
+  <section class="section" style="padding-top:0">
+    <div class="faq">
+      <h3><span class="ar">كيف أفجّر عنقود المكعبات؟</span><span class="en">How do I blast a cube cluster?</span></h3>
+      <p><span class="ar">انقر أي مكعب رمز — إن كان له جار أو أكثر بنفس الرمز فسيتفجّر العنقود كاملاً دفعة واحدة، وكل ما فوقه من صخور أو ذهب أو حمم ينهار بالجاذبية إلى الفراغ الذي تركه. كل نقرة تكلّف حركة من ميزانية المرحلة.</span><span class="en">Tap any symbol cube — if it has one or more matching neighbors, the whole cluster blasts at once, and everything above it (rock, gold, lava) collapses under gravity into the gap it left. Every tap costs one move from the level's move budget.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">الحمم قتلت السجين رغم أنها بعيدة قليلاً!</span><span class="en">Lava killed the prisoner even though it looked far away!</span></h3>
+      <p><span class="ar">الحمم قاتلة ضمن نصف قطر معيّن حول السجين، وليس فقط عند التلامس المباشر — فإن اقتربت كفاية تخسر المرحلة فوراً. الصخور تُطفئ الحمم إلى حجر بارد آمن عند ملامستها المباشرة، فاستخدم الانهيارات لتوجيه صخرة فوق الحمم قبل أن تصل قريباً من السجين.</span><span class="en">Lava is lethal within a certain radius of the prisoner, not only on direct contact — get close enough and the level ends immediately. Rock douses lava into safe cold stone on direct contact, so use collapses to steer a rock over the lava before it gets close to the prisoner.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">لماذا خسرت رغم أن السجين لم يلمس الحمم؟</span><span class="en">Why did I lose even though the prisoner never touched lava?</span></h3>
+      <p><span class="ar">أربعة أسباب للخسارة: امتلأ شريط انتباه السجّان ١٠٠٪، أو اقتربت الحمم منه ضمن نصف قطر الخطر، أو أمسك به السجّان، أو نفدت حركاتك قبل وصوله للمخرج (وحينها تحصل على "لحظة أخيرة" بزر حركات إضافية عبر إعلان قبل الخسارة الفعلية).</span><span class="en">Four ways to lose: the Guard Attention meter reaches 100%, lava gets within the danger radius, the guard catches him, or you run out of moves before he reaches the exit (in which case you get a "last chance" with a bonus-moves-via-ad button before the actual loss).</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ما هو شريط "انتباه السجّان"؟</span><span class="en">What is the "Guard Attention" meter?</span></h3>
+      <p><span class="ar">الشريط أعلى الشاشة يمتلئ تلقائياً مع الوقت، ويرتفع أكثر مع كل عنقود مكعبات تفجّره. عند ١٠٠٪ ينطلق الإنذار وتخسر المرحلة فوراً. لذلك فكّر قبل كل نقرة، ولا تفجّر عناقيد لا تحتاجها.</span><span class="en">The bar at the top fills automatically over time, and rises further with every cluster you blast. At 100% the alarm sounds and the level is lost immediately. So think before every tap, and don't blast clusters you don't need.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف يتحرّك السجين؟ هل أتحكّم به مباشرة؟</span><span class="en">How does the prisoner move? Do I control him directly?</span></h3>
+      <p><span class="ar">لا — السجين "سائل" ينزلق بالجاذبية عبر الفراغات التي تفتحها بتفجير المكعبات، تماماً كحبيبات الرمل والذهب. مهمتك أن تفتح له مساراً آمناً بعيداً عن الحمم حتى يصل إلى فتحة المخرج.</span><span class="en">No — the prisoner is a "liquid" that slides under gravity through the gaps you open by blasting cubes, exactly like sand and gold grains. Your job is to open him a safe path clear of lava until he reaches the exit hatch.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ما تقييم النجوم الثلاث؟</span><span class="en">How is the three-star rating decided?</span></h3>
+      <p><span class="ar">التقييم على عدد الحركات المتبقية بعد الفوز: خمس حركات أو أكثر = ٣ نجوم، اثنتان أو أكثر = نجمتان، وأقل من ذلك = نجمة واحدة. الذهب الذي يدخل المخرج يمنحك عملات إضافية بغضّ النظر عن التقييم.</span><span class="en">The rating is based on moves remaining after winning: five or more moves = 3 stars, two or more = 2 stars, and fewer = 1 star. Gold that reaches the exit earns you extra coins regardless of the star rating.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ما هي التعزيزات في السوق السوداء؟</span><span class="en">What are the Black Market boosters?</span></h3>
+      <p><span class="ar">مبرّد الحديد يذيب مكعباً واحداً بلا استهلاك حركة، قنبلة الدخان تجمّد شريط السجّان وتخفض انتباهه ٢٠٪، المفتاح الهيكلي يفجّر كل مكعبات ممر الهروب فوراً، وحزمة القلوب ×٣ ترجعك لمحاولة جديدة. كلها تُشترى بعملات تربحها من اللعب — لا تحتاج شراءً بمال حقيقي.</span><span class="en">The iron file melts one cube without spending a move, the smoke bomb freezes the guard meter and lowers his attention by 20%, the skeleton key instantly blasts every cube in the escape corridor, and the lives pack ×3 gives you fresh attempts. All are bought with coins you earn by playing — no real-money purchase needed.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">ما الإعلانات التي تظهر، وكيف أزيلها؟</span><span class="en">What ads appear, and how do I remove them?</span></h3>
+      <p><span class="ar">اللعبة مجانية ومدعومة بإعلانات Google AdMob، وتقتصر على نوعين فقط: إعلان بيني (كامل الشاشة) يظهر أحياناً بعد شاشتي الفوز أو الخسارة، وثلاثة إعلانات مكافأة اختيارية تماماً (مضاعفة الفوز ×٢، حركات إضافية ٥+ في اللحظة الأخيرة، وحركات إضافية عند إعادة المحاولة). لا توجد لافتات إعلانية إطلاقاً، ولا يقاطعك إعلان أثناء اللعب، ولا يظهر الإعلان البيني في أول مرحلتين. لإزالة الإعلان البيني نهائياً، افتح السوق السوداء واضغط "إزالة الإعلانات" — عملية شراء واحدة دائمة بلا اشتراك.</span><span class="en">The game is free and supported by Google AdMob ads, limited to two kinds only: an interstitial (full-screen) ad that appears occasionally after the win or lose screen, and three entirely optional rewarded ads (2x win doubling, +5 bonus moves at the last chance, and bonus moves on retry). There are no banner ads at all, nothing interrupts you during play, and the interstitial never appears during your first two levels. To remove the interstitial permanently, open the Black Market and tap "Remove ads" — a single one-time purchase, no subscription.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">اشتريت إزالة الإعلانات ولكنها لم تُفعَّل / غيّرت جهازي</span><span class="en">I bought Remove ads but it isn't active / I changed my device</span></h3>
+      <p><span class="ar">عملية الشراء مرتبطة بحساب المتجر (Apple ID أو حساب Google) وليس بالجهاز. سجّل الدخول على الجهاز الجديد بنفس الحساب الذي اشتريت به، ثم افتح السوق السوداء واضغط "استعادة المشتريات" — ستُستعاد إزالة الإعلانات مباشرةً. إن لم تُفعَّل بعد ذلك، تأكّد من اتصالك بالإنترنت وأعد المحاولة، أو راسلنا مرفقاً إيصال الشراء من المتجر.</span><span class="en">The purchase is tied to your store account (Apple ID or Google account), not to your device. Sign in on the new device with the same account you purchased with, open the Black Market, and tap "Restore purchases" — ad removal will be restored right away. If it still isn't active, check your internet connection and try again, or email us with your store receipt.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">هل تُحفظ مرحلتي وإعداداتي؟</span><span class="en">Are my level and settings saved?</span></h3>
+      <p><span class="ar">تُحفظ إعداداتك (الصوت، الموسيقى، الاهتزاز)، ومحفظتك وقلوبك ونجومك ومخزون تعزيزاتك، والمرحلة الجارية إن قطعتها في منتصفها، محلياً على جهازك فقط. لا توجد مزامنة سحابية ولا حساب لتسجيل الدخول — وهذا يعني أن اللعبة لا تجمع عنك أي بيانات، لكنه يعني أيضاً أن هذه البيانات لا تنتقل بين الأجهزة وتُحذف إذا أزلت اللعبة. أما شراء إزالة الإعلانات فمرتبط بحساب المتجر ويمكن استعادته على أي جهاز.</span><span class="en">Your settings (sound, music, vibration), your wallet, hearts, stars, and booster inventory, and an in-progress level if you left one unfinished, are stored locally on your device only. There is no cloud sync and no login account — which means the game collects no data about you, but it also means this data does not transfer between devices and is erased if you uninstall the game. The Remove ads purchase, however, is tied to your store account and can be restored on any device.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف أكتم الصوت أو أوقف الاهتزاز؟</span><span class="en">How do I mute the sound or turn off vibration?</span></h3>
+      <p><span class="ar">من زر الإعدادات في الشاشة الرئيسية: ستجد مفاتيح مستقلة للمؤثرات الصوتية والموسيقى والاهتزاز، وتُحفظ اختياراتك تلقائياً. ومن نفس الشاشة يمكنك أيضاً إدارة موافقتك على الإعلانات المخصّصة.</span><span class="en">From the settings button on the home screen: you will find separate switches for sound effects, music, and vibration, and your choices are saved automatically. From the same screen you can also manage your consent for personalized ads.</span></p>
+    </div>
+    <div class="faq">
+      <h3><span class="ar">كيف أبلّغ عن خطأ في اللعبة؟</span><span class="en">How do I report a bug?</span></h3>
+      <p><span class="ar">راسلنا على <a href="mailto:diaa.themaster@gmail.com">diaa.themaster@gmail.com</a> أو استخدم نموذج التواصل أدناه. لمساعدتنا في حلّ المشكلة بسرعة، يُرجى ذكر طراز جهازك ونظام التشغيل وإصداره، ورقم المرحلة، ووصفاً لما حدث بالضبط، ولقطة شاشة إن أمكن.</span><span class="en">Email us at <a href="mailto:diaa.themaster@gmail.com">diaa.themaster@gmail.com</a> or use the contact form below. To help us fix it quickly, please include your device model, OS and version, the level number, a description of exactly what happened, and a screenshot if possible.</span></p>
+    </div>
+
+    <!-- contact form -->
+    <div class="formcard">
+      <h2><span class="ar">تواصل معنا</span><span class="en">Contact Us</span></h2>
+      <p class="sub"><span class="ar">لم تجد إجابتك؟ أرسل لنا رسالة وسنعود إليك في أقرب وقت.</span><span class="en">Didn't find your answer? Send us a message and we'll get back to you soon.</span></p>
+      <form id="supportForm">
+        <div class="formrow">
+          <div class="field"><label for="sf-name"><span class="ar">الاسم</span><span class="en">Name</span></label><input id="sf-name" name="name" type="text" required></div>
+          <div class="field"><label for="sf-email"><span class="ar">بريدك الإلكتروني</span><span class="en">Your email</span></label><input id="sf-email" name="email" type="email" required></div>
+        </div>
+        <div class="field"><label for="sf-subject"><span class="ar">الموضوع</span><span class="en">Subject</span></label><input id="sf-subject" name="subject" type="text" required></div>
+        <div class="field"><label for="sf-message"><span class="ar">رسالتك</span><span class="en">Your message</span></label><textarea id="sf-message" name="message" required></textarea></div>
+        <button class="btn" type="submit"><span class="ar">إرسال</span><span class="en">Send message</span></button>
+        <p class="form-hint"><span class="ar">سيفتح هذا تطبيق البريد لديك لإرسال الرسالة إلينا.</span><span class="en">This opens your email app to send us the message.</span></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <nav>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Use</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+    </nav>
+    <span class="cp">© 2026 dm — <span class="ar">جميع الحقوق محفوظة</span><span class="en">All rights reserved</span></span>
+  </div>
+</footer>
+<script>
+(function () {
+  var f = document.getElementById('supportForm');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var body = 'Name: ' + v('sf-name') + '\nEmail: ' + v('sf-email') + '\n\n' + v('sf-message');
+    window.location.href = 'mailto:diaa.themaster@gmail.com'
+      + '?subject=' + encodeURIComponent('[SAVE THE PRISONER Support] ' + v('sf-subject'))
+      + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
