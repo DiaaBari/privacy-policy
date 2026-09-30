@@ -1,0 +1,169 @@
+/* "فرز القطط / Cat Sort" — the game's night room (bilingual AR/EN).
+   Palette mirrors the game's CatColors design tokens: violet night sky, cream text,
+   the orange play button, and the wooden shelf plank. */
+:root{
+  --bg-top:#2C2256;   --bg-bottom:#1B1533; --surface:#241C48;
+  --card:#332A5F;     --card-2:#2E2658;
+  --ink:#FFF4E2;      --body:#EFE4D2;      --sub:#C9BBE8;
+  --muted:#B3A6D6;    --dim:#8F82B8;
+  --orange:#F2A03D;   --orange-lite:#FFB958; --orange-deep:#E08A24; --on-orange:#3B2A1A;
+  --gold:#FFD34D;     --gold-deep:#E0A81F;
+  --wood:#D9A066;     --wood-edge:#B97A3C;  --wood-lite:#E9BE8B;
+  --mint:#9BD76A;
+  --line:#4A3F7E;     --line-soft:rgba(242,160,61,.18);
+  --shadow:0 14px 34px rgba(8,5,22,.38);
+  --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg-bottom)}
+body{
+  font-family:'Tajawal','IBM Plex Sans Arabic',system-ui,'Segoe UI',Tahoma,sans-serif;
+  background:linear-gradient(178deg,var(--bg-top) 0%,var(--bg-bottom) 620px) no-repeat,var(--bg-bottom);
+  color:var(--body);
+  line-height:1.9; font-size:18px;
+}
+h1,h2,h3{font-family:'Baloo Bhaijaan 2','Tajawal',sans-serif;font-weight:700;color:var(--ink)}
+a{color:var(--orange-lite);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--orange-lite);outline-offset:2px}
+strong{color:var(--ink)}
+code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.85em;background:var(--surface);
+  border:1px solid var(--line);border-radius:6px;padding:1px 6px;direction:ltr;unicode-bidi:isolate}
+.container{max-width:920px;margin:0 auto;padding:0 22px}
+
+/* ── Header ── */
+header.site{
+  background:rgba(27,21,51,.9); position:sticky; top:0; z-index:10;
+  border-bottom:1px solid var(--line); backdrop-filter:blur(8px);
+}
+header.site .container{display:flex;align-items:center;justify-content:space-between;height:70px;gap:10px}
+.brand{display:flex;align-items:center;gap:11px;font-size:21px;color:var(--ink);
+  font-family:'Baloo Bhaijaan 2','Tajawal',sans-serif;font-weight:700}
+.brand img.logo{width:42px;height:42px;flex:0 0 auto;border-radius:12px;border:1px solid var(--line)}
+nav.site{display:flex;align-items:center;flex-wrap:wrap}
+nav.site a{color:var(--muted);margin-inline-start:18px;font-weight:500}
+nav.site a:hover{color:var(--orange-lite);text-decoration:none}
+.langbtn{background:linear-gradient(180deg,var(--orange-lite),var(--orange));color:var(--on-orange);border:0;
+  border-radius:999px;padding:7px 16px;font-family:'Baloo Bhaijaan 2','Tajawal',sans-serif;font-weight:700;
+  font-size:15px;cursor:pointer;margin-inline-start:16px;line-height:1.5;
+  box-shadow:0 3px 0 var(--orange-deep);transition:transform .12s,box-shadow .12s}
+.langbtn:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--orange-deep)}
+
+/* ── Shelf ribbon (the level plank under the header) ── */
+.ribbon{height:12px;
+  background:linear-gradient(180deg,var(--wood-lite) 0 3px,var(--wood) 3px 9px,var(--wood-edge) 9px 12px)}
+
+/* ── Hero ── */
+.hero{text-align:center;padding:60px 0 46px}
+.hero .appicon{width:132px;height:132px;margin-bottom:16px;border-radius:30px;border:1px solid var(--line);
+  box-shadow:0 18px 40px rgba(8,5,22,.5)}
+.hero h1{font-size:46px;line-height:1.35;margin-bottom:14px}
+.hero .tag{font-size:20px;color:var(--sub);max-width:680px;margin:0 auto 28px}
+.badge-pill{display:inline-block;background:rgba(155,215,106,.10);border:1px solid var(--mint);
+  color:var(--mint);border-radius:999px;padding:5px 16px;font-weight:600;font-size:15px;margin-bottom:20px}
+
+/* ── Store buttons (soon = not yet published) ── */
+.stores{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.store-btn{display:inline-flex;align-items:center;gap:12px;background:var(--card);color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;padding:12px 22px;min-width:215px;
+  transition:transform .15s,border-color .15s;box-shadow:var(--shadow)}
+.store-btn:hover{transform:translateY(-3px);text-decoration:none;color:var(--ink);border-color:var(--orange)}
+.store-btn svg{width:30px;height:30px;flex:0 0 auto;fill:var(--ink)}
+.store-btn .t{display:flex;flex-direction:column;text-align:start;line-height:1.3}
+.store-btn .t small{font-size:12px;color:var(--muted);font-weight:400}
+.store-btn .t b{font-size:19px;font-family:'Baloo Bhaijaan 2',sans-serif;font-weight:700}
+.store-btn.soon{opacity:.6;cursor:default}
+.store-btn.soon:hover{transform:none;border-color:var(--line)}
+.soon-note{color:var(--muted);font-size:15px;margin-top:14px}
+
+/* ── Screenshots ── */
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:720px;margin:0 auto}
+.shots figure{margin:0}
+.shots img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.shots figcaption{text-align:center;color:var(--muted);font-size:15px;margin-top:8px}
+
+/* ── Feature grid ── */
+.section{padding:50px 0}
+.section h2{font-size:32px;text-align:center;margin-bottom:8px}
+.section .sub{text-align:center;color:var(--muted);margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.grid.four{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.feat .ic{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  font-size:27px;margin-bottom:14px;border:1px solid rgba(255,244,226,.08)}
+.feat h3{font-size:21px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:16px}
+.feat .cost{display:inline-block;margin-top:10px;font-weight:700;color:var(--gold);font-size:15px}
+
+/* ── Document pages (privacy / terms / support) ── */
+.doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:40px 38px;margin:34px 0}
+.doc h1{font-size:36px;margin-bottom:6px}
+.doc .updated{color:var(--muted);font-size:15px;margin-bottom:26px}
+.doc h2{font-size:23px;color:var(--orange-lite);margin:30px 0 10px}
+.doc h3{font-size:19px;color:var(--ink);margin:22px 0 8px}
+.doc h2:nth-of-type(3n){color:var(--gold)}
+.doc h2:nth-of-type(3n+2){color:var(--wood-lite)}
+.doc p,.doc li{color:var(--sub);margin-bottom:12px}
+.doc ul,.doc ol{padding-inline-start:26px;margin-bottom:12px}
+.doc li::marker{color:var(--orange)}
+.doc .note{background:rgba(155,215,106,.08);border-inline-start:4px solid var(--mint);
+  border-radius:12px;padding:14px 18px;margin:18px 0}
+.doc .note p,.doc .note li{color:var(--body)}
+.doc a{font-weight:600}
+
+/* ── FAQ ── */
+.faq{background:var(--card-2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+  padding:20px 24px;margin-bottom:14px}
+.faq h3{font-size:19px;color:var(--orange-lite);margin-bottom:6px}
+.faq p{color:var(--muted);font-size:16px;margin:0}
+
+/* ── Contact card ── */
+.contact{background:linear-gradient(135deg,rgba(242,160,61,.14),rgba(255,211,77,.08) 70%);
+  border:1px solid var(--orange);
+  color:var(--ink);border-radius:var(--radius);padding:30px;text-align:center;margin:24px 0}
+.contact h2{color:var(--ink);margin-bottom:8px}
+.contact p{color:var(--body);margin-bottom:6px}
+.contact a{color:var(--orange-lite);font-weight:700;text-decoration:underline}
+
+/* ── Contact form ── */
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:32px 34px;margin:24px 0}
+.formcard h2{font-size:25px;margin-bottom:6px}
+.formcard .sub{color:var(--muted);margin-bottom:22px;font-size:16px}
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:15px;margin-bottom:6px;color:var(--ink)}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;font-family:inherit;font-size:16px;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,160,61,.2)}
+.field textarea{min-height:140px;resize:vertical}
+.btn{display:inline-block;background:linear-gradient(180deg,var(--orange-lite),var(--orange));color:var(--on-orange);
+  border:0;border-radius:999px;padding:13px 34px;font-family:'Baloo Bhaijaan 2','Tajawal',sans-serif;
+  font-weight:700;font-size:17px;cursor:pointer;box-shadow:0 4px 0 var(--orange-deep);
+  transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--orange-deep)}
+.form-hint{color:var(--muted);font-size:14px;margin-top:12px}
+
+/* ── Footer ── */
+footer.site{background:var(--surface);border-top:1px solid var(--line);padding:34px 0;margin-top:40px}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer.site nav a{color:var(--muted);margin-inline-end:18px;font-weight:500}
+footer.site nav a:hover{color:var(--orange-lite)}
+footer.site .cp{color:var(--dim);font-size:15px}
+
+@media(max-width:600px){
+  .hero h1{font-size:33px}.hero .tag{font-size:18px}
+  nav.site a{margin-inline-start:12px;font-size:15px}
+  .doc,.formcard{padding:28px 22px}
+  .formrow{grid-template-columns:1fr}
+  .shots{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  header.site .container{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ── Language toggle (Arabic default / English) ── */
+html[data-lang="ar"] .en{display:none !important}
+html[data-lang="en"] .ar{display:none !important}

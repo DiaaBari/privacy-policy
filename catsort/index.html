@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فرز القطط — Cat Sort</title>
+<meta name="description" content="Cat Sort: a cozy cat-sorting puzzle of 60 levels, fully offline, no ads. فرز القطط: لغز فرز قطط هادئ من ٦٠ مرحلة، بلا إنترنت وبلا إعلانات.">
+<link rel="icon" type="image/png" href="app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand"><img class="logo" src="app-icon.png" alt="">
+      <span class="ar">فرز القطط</span><span class="en">Cat Sort</span></div>
+    <nav class="site">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button class="langbtn" onclick="toggleLang()"><span class="ar">English</span><span class="en">العربية</span></button>
+    </nav>
+  </div>
+</header>
+<div class="ribbon"></div>
+
+<main>
+  <section class="hero container">
+    <img class="appicon" src="app-icon.png" alt="">
+    <span class="badge-pill"><span class="ar">مجانية • بلا إعلانات • تعمل بلا إنترنت</span><span class="en">Free • No ads • Plays offline</span></span>
+    <h1><span class="ar">فرز القطط 🐾</span><span class="en">Cat Sort 🐾</span></h1>
+    <p class="tag"><span class="ar">عشر سلالات من القطط تسلّلت إلى رفوف غرفة ليلية دافئة واختلطت ببعضها. انقلها من رف إلى رف حتى يمتلئ كل رف بأربع قطط من السلالة نفسها، فتقفز عنه محتفلة. <strong>٦٠ مرحلة</strong> تتدرّج من السهل إلى الماكر، وكل واحدة منها <strong>مُتحقَّق من أن لها حلاً</strong>.</span><span class="en">Ten breeds of cats have wandered onto the shelves of a cozy night room, and they are all mixed up. Move them from shelf to shelf until each one holds four cats of the same breed, and they leap off it to celebrate. <strong>60 levels</strong> grow from gentle to tricky, and <strong>every one is checked to be solvable</strong>.</span></p>
+    <div class="stores">
+      <span class="store-btn soon">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-37 16.6-64.9 50.5-85.4-19-27.2-47.6-42.2-85.3-45.1-35.8-2.8-74.9 20.9-89.2 20.9-15.1 0-49.7-19.9-76.9-19.9C71.2 139.8 16 184.1 16 273.5c0 26.4 4.8 53.7 14.5 81.8 12.9 36.9 59.4 127.5 107.9 126 25.4-.6 43.3-18 76.3-18 32.1 0 48.7 18 76.9 18 49-0.7 91-83 103.2-120 -65.5-30.9-62-90.6-62-90.6zM258.1 90.3c30-35.6 27.3-68 26.4-79.6-26.6 1.5-57.3 18.1-74.7 38.5-19.2 21.8-30.5 48.7-28.1 78.1 28.8 2.2 54.9-12.7 76.4-37z"/></svg>
+        <span class="t"><small><span class="ar">قريباً على</span><span class="en">Coming soon to the</span></small><b>App Store</b></span>
+      </span>
+      <span class="store-btn soon">
+        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13.6c-7-7-17-9-26-5l245.7 245.7 1-19.7zm79.1 36.9-58.6-33.8-30 30 30 30 58.6-33.8c14.8-8.5 14.8-29.9 0-37.4zM73.6 8.6c-3.4 3.6-5.6 8.9-5.6 15.8v463.2c0 6.9 2.2 12.2 5.6 15.8l253.9-253.9L73.6 8.6zM78.6 503.4c9 4 19 2 26-5l220.7-220.7-1-19.7L78.6 503.4z"/></svg>
+        <span class="t"><small><span class="ar">قريباً على</span><span class="en">Coming soon to</span></small><b>Google Play</b></span>
+      </span>
+    </div>
+    <p class="soon-note"><span class="ar">اللعبة في مراحل النشر الأخيرة — ستتوفّر قريباً مجاناً على App Store وGoogle Play.</span><span class="en">The game is in the final stages of publishing — coming soon, free, on the App Store and Google Play.</span></p>
+  </section>
+
+  <section class="section" style="padding-top:10px"><div class="container">
+    <div class="shots">
+      <figure><img class="ar" src="shots/ar-1-play.jpg" alt="رفوف المرحلة ٢٤ وعليها قطط مختلطة" loading="lazy" width="360" height="780"><img class="en" src="shots/en-1-play.jpg" alt="The shelves of level 24 with mixed-up cats" loading="lazy" width="360" height="780">
+        <figcaption><span class="ar">رتّب القطط</span><span class="en">Sort the cats</span></figcaption></figure>
+      <figure><img class="ar" src="shots/ar-2-win.jpg" alt="نافذة الفوز: أحسنت" loading="lazy" width="360" height="780"><img class="en" src="shots/en-2-win.jpg" alt="The win card: Well done" loading="lazy" width="360" height="780">
+        <figcaption><span class="ar">أفرغ الرفوف</span><span class="en">Clear the shelves</span></figcaption></figure>
+      <figure><img class="ar" src="shots/ar-4-levels.jpg" alt="شبكة المراحل الستين" loading="lazy" width="360" height="780"><img class="en" src="shots/en-4-levels.jpg" alt="The grid of 60 levels" loading="lazy" width="360" height="780">
+        <figcaption><span class="ar">٦٠ مرحلة</span><span class="en">60 levels</span></figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <h2><span class="ar">كيف تُلعب</span><span class="en">How it plays</span></h2>
+    <p class="sub"><span class="ar">لمستان لكل حركة، ولا مؤقّت يستعجلك</span><span class="en">Two taps per move, and no timer rushing you</span></p>
+    <div class="grid">
+      <div class="feat">
+        <div class="ic" style="background:rgba(242,160,61,.16)">👆</div>
+        <h3><span class="ar">المس رفاً</span><span class="en">Tap a shelf</span></h3>
+        <p><span class="ar">تلتقط القطط المتشابهة التي في طرفه — وحدها، لا المحبوسة في الوسط.</span><span class="en">You pick up the matching cats at its end — only those, never the ones trapped in the middle.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(217,160,102,.18)">🪵</div>
+        <h3><span class="ar">المس رفاً آخر</span><span class="en">Tap another shelf</span></h3>
+        <p><span class="ar">تنتقل إليه ما يتّسع منها. كل رف يحمل أربع قطط، فخطّط أين تضع كل مجموعة.</span><span class="en">As many as fit move across. Every shelf holds four cats, so plan where each group goes.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(255,211,77,.18)">🎉</div>
+        <h3><span class="ar">أربع من سلالة واحدة</span><span class="en">Four of a kind</span></h3>
+        <p><span class="ar">يمتلئ الرف بسلالة واحدة فتقفز القطط عنه ويخلو. أفرغ الرفوف كلها لتفوز بالمرحلة.</span><span class="en">A shelf full of one breed empties as its cats leap off. Clear every shelf to win the level.</span></p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-top:0"><div class="container">
+    <h2><span class="ar">علقت؟ أربع مساعدات</span><span class="en">Stuck? Four helpers</span></h2>
+    <p class="sub"><span class="ar">تُشترى بالعملات التي تكسبها — ١٠ عملات لكل مرحلة — والتراجع والإعادة مجاناً دائماً</span><span class="en">Bought with the coins you earn — 10 per level — while Undo and Restart are always free</span></p>
+    <div class="grid four">
+      <div class="feat">
+        <div class="ic" style="background:rgba(255,211,77,.18)">💡</div>
+        <h3><span class="ar">تلميح</span><span class="en">Hint</span></h3>
+        <p><span class="ar">يُريك حركة تقرّبك من الحل.</span><span class="en">Shows you a move that brings you closer to the solution.</span></p>
+        <span class="cost">🪙 15</span>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(217,160,102,.18)">➕</div>
+        <h3><span class="ar">رف إضافي</span><span class="en">Extra shelf</span></h3>
+        <p><span class="ar">رف فارغ جديد يفكّ الازدحام.</span><span class="en">A fresh empty shelf to ease the jam.</span></p>
+        <span class="cost">🪙 30</span>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(155,215,106,.14)">🔀</div>
+        <h3><span class="ar">خلط القطط</span><span class="en">Shuffle</span></h3>
+        <p><span class="ar">يعيد ترتيب القطط على الرفوف ترتيباً جديداً.</span><span class="en">Rearranges the cats across the shelves.</span></p>
+        <span class="cost">🪙 30</span>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(242,160,61,.16)">💣</div>
+        <h3><span class="ar">قنبلة</span><span class="en">Bomb</span></h3>
+        <p><span class="ar">تُزيل سلالة كاملة من اللوح دفعة واحدة.</span><span class="en">Clears one whole breed from the board at once.</span></p>
+        <span class="cost">🪙 50</span>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-top:0"><div class="container">
+    <h2><span class="ar">لعبة تحترمك</span><span class="en">A game that respects you</span></h2>
+    <p class="sub"><span class="ar">شفافية كاملة حول ما تفعله اللعبة وما لا تفعله</span><span class="en">Full transparency about what the game does — and doesn't</span></p>
+    <div class="grid">
+      <div class="feat">
+        <div class="ic" style="background:rgba(155,215,106,.14)">🚫</div>
+        <h3><span class="ar">بلا إعلانات — ولا واحد</span><span class="en">No ads — not one</span></h3>
+        <p><span class="ar">لا لافتات، ولا إعلان بين المراحل، ولا إعلان مكافأة. ولا توجد داخل التطبيق أي مكتبة إعلانات أصلاً.</span><span class="en">No banners, no ads between levels, no rewarded video. There is no advertising library inside the app at all.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(201,187,232,.14)">🕵️</div>
+        <h3><span class="ar">بلا تتبّع</span><span class="en">No tracking</span></h3>
+        <p><span class="ar">لا يُقرأ معرّفك الإعلاني، ولا يطلب التطبيق إذن التتبّع، ولا تحليلات ولا حساب. لا شيء لتوافق عليه.</span><span class="en">Your advertising ID is never read, the app never asks for tracking permission, and there are no analytics and no account. There is nothing to consent to.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(255,211,77,.18)">📴</div>
+        <h3><span class="ar">تعمل بلا إنترنت</span><span class="en">Plays offline</span></h3>
+        <p><span class="ar">المراحل الستون كلها داخل التطبيق. العب من أوّلها إلى آخرها في وضع الطيران — تقدّمك يبقى على جهازك.</span><span class="en">All 60 levels live inside the app. Play start to finish in airplane mode — your progress stays on your device.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(242,160,61,.16)">🐱</div>
+        <h3><span class="ar">مجانية حتى النهاية</span><span class="en">Free to the end</span></h3>
+        <p><span class="ar">يمكن إنهاء اللعبة كاملة دون دفع أي مبلغ. المشتريات اختيارية: حزم عملات وعرضان معروف محتواهما مسبقاً — بلا اشتراكات ولا صناديق مفاجآت.</span><span class="en">The whole game can be finished without paying anything. Purchases are optional: coin packs and two offers whose contents you see before buying — no subscriptions, no loot boxes.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(217,160,102,.18)">🌙</div>
+        <h3><span class="ar">عربية أولاً، وبالإنجليزية أيضاً</span><span class="en">Arabic first, English too</span></h3>
+        <p><span class="ar">صُمّمت من اليمين إلى اليسار من أوّل شاشة، وتتبدّل إلى الإنجليزية بلمسة من الإعدادات.</span><span class="en">Designed right-to-left from the first screen, and switches to English with one tap in Settings.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic" style="background:rgba(155,215,106,.14)">↩️</div>
+        <h3><span class="ar">تراجع وأكمل من حيث توقّفت</span><span class="en">Undo, and pick up where you left off</span></h3>
+        <p><span class="ar">تراجع عن آخر ٢٠ حركة أو أعد المرحلة متى شئت، مجاناً. وإن خرجت في منتصف مرحلة، تعود إليها كما تركتها.</span><span class="en">Undo up to your last 20 moves or restart the level whenever you like, for free. Leave in the middle of a level and you come back to it exactly as you left it.</span></p>
+      </div>
+    </div>
+  </div></section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <nav>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Use</span></a>
+      <a href="support.html"><span class="ar">الدعم</span><span class="en">Support</span></a>
+      <a href="mailto:diaa.themaster@gmail.com" dir="ltr">diaa.themaster@gmail.com</a>
+    </nav>
+    <span class="cp">© 2026 dm — <span class="ar">جميع الحقوق محفوظة</span><span class="en">All rights reserved</span></span>
+  </div>
+</footer>
+
+</body>
+</html>
