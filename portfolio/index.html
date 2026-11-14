@@ -144,7 +144,7 @@
     .timeline-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent2); }
 
     /* ── Projects ── */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 20px; }
     .project-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 12px; padding: 24px; transition: all .2s;
@@ -160,15 +160,9 @@
     .project-title { font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
     .project-desc { font-size: 0.86rem; color: var(--text-soft); flex: 1; margin-bottom: 14px; }
     .project-stat { font-size: 0.82rem; color: var(--yellow); margin-bottom: 12px; }
-    .project-links { display: flex; gap: 8px; }
-    .project-link {
-      flex: 1; text-align: center; padding: 7px; border-radius: 6px;
-      font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all .2s;
-      border: 1px solid var(--border); color: var(--text-soft);
-    }
-    .project-link:hover { border-color: var(--accent); color: var(--accent); }
-    .project-link.primary { background: var(--accent); color: #0d1117; border-color: var(--accent); }
-    .project-link.primary:hover { background: #79b8ff; }
+    .project-links { display: flex; flex-wrap: wrap; align-items: center; min-height: 60px; }
+    .project-links img { display: block; width: auto; }
+    .project-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     /* ── Education ── */
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
@@ -406,7 +400,9 @@
       <div class="project-desc">Contributed to one of the most downloaded card games. Major global release with millions of active users.</div>
       <div class="project-stat">⭐ 10,000,000+ downloads</div>
       <div class="project-links">
-        <a class="project-link primary" href="https://play.google.com/store/search?q=solitaire+cruise" target="_blank">Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.belkagames.solitaire" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/google-play-en.png" width="155" height="60" alt="Get it on Google Play">
+        </a>
       </div>
     </div>
 
@@ -419,8 +415,12 @@
       <div class="project-desc">Interactive Arabic language app covering the Grade 3 curriculum — grammar, vocabulary, and reading comprehension with engaging exercises.</div>
       <div class="project-stat">🎓 Arabic Language · Grade 3</div>
       <div class="project-links">
-        <a class="project-link primary" href="https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.ArOneGradeThree" target="_blank">Google Play</a>
-        <a class="project-link" href="https://apps.apple.com/us/app/%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%9A%D9%A9-%D9%A1-%D8%A7%D9%84%D8%B5%D9%81-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB/id1581316859" target="_blank">App Store</a>
+        <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%9A%D9%A9-%D9%A1-%D8%A7%D9%84%D8%B5%D9%81-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB/id1581316859" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.ArOneGradeThree" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/google-play-en.png" width="155" height="60" alt="Get it on Google Play">
+        </a>
       </div>
     </div>
 
@@ -433,8 +433,12 @@
       <div class="project-desc">First-grade Arabic language learning app designed to build communication and reading skills with fun interactive activities.</div>
       <div class="project-stat">🎓 Arabic Language · Grade 1</div>
       <div class="project-links">
-        <a class="project-link primary" href="https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Arabic1firstgradetawasal" target="_blank">Google Play</a>
-        <a class="project-link" href="https://apps.apple.com/us/app/%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%9A%D9%A9-%D8%AA%D9%88%D8%A7%D8%B5%D9%84/id1592117774" target="_blank">App Store</a>
+        <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%9A%D9%A9-%D8%AA%D9%88%D8%A7%D8%B5%D9%84/id1592117774" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Arabic1firstgradetawasal" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/google-play-en.png" width="155" height="60" alt="Get it on Google Play">
+        </a>
       </div>
     </div>
 
@@ -447,7 +451,9 @@
       <div class="project-desc">Spot-the-difference puzzle game with multiple categories. Available on Android & iOS with remote asset bundles.</div>
       <div class="project-stat">⭐ 10,000+ downloads</div>
       <div class="project-links">
-        <a class="project-link primary" href="https://play.google.com/store/apps/details?id=com.tech4app.differences" target="_blank">Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tech4app.differences" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/google-play-en.png" width="155" height="60" alt="Get it on Google Play">
+        </a>
       </div>
     </div>
 
@@ -459,9 +465,6 @@
       <div class="project-title">مغامرات الفي – Let's Learn</div>
       <div class="project-desc">Adventurous educational game for young children featuring the character Alfi, covering early learning concepts through interactive gameplay.</div>
       <div class="project-stat">🎮 Educational Adventure · Ages 3+</div>
-      <div class="project-links">
-        <a class="project-link primary" href="https://play.google.com/store/apps/details?id=com.dow.LetsLearn" target="_blank">Google Play</a>
-      </div>
     </div>
 
     <div class="project-card">
@@ -473,8 +476,9 @@
       <div class="project-desc">Educational game teaching Arabic alphabet to children ages 5–12, covering pronunciation, letter placement, writing practice, and word usage.</div>
       <div class="project-stat">⭐ 5.0 · 1,000+ downloads · Ages 3+</div>
       <div class="project-links">
-        <a class="project-link primary" href="https://play.google.com/store/apps/details?id=com.Mufakker.Manhaj" target="_blank">Google Play</a>
-        <a class="project-link" href="https://apps.apple.com/il/app/letters-land/id6461212964" target="_blank">App Store</a>
+        <a href="https://apps.apple.com/il/app/letters-land/id6461212964" target="_blank" rel="noopener">
+          <img src="../riverescape/store-badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store">
+        </a>
       </div>
     </div>
 

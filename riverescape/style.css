@@ -59,10 +59,6 @@ nav.site a:hover{color:var(--orange-lite);text-decoration:none}
 .badge-pill{display:inline-block;background:rgba(155,215,106,.10);border:1px solid var(--mint);
   color:var(--mint);border-radius:999px;padding:5px 16px;font-weight:600;font-size:15px;margin-bottom:20px}
 
-/* ── Store badges ── */
-.stores{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;column-gap:4px;margin-top:8px}
-.store-badge{display:block;width:auto}
-
 /* ── Screenshots ── */
 .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:720px;margin:0 auto}
 .shots figure{margin:0}

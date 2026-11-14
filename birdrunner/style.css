@@ -50,17 +50,6 @@ nav.site a:hover{color:var(--terracotta);text-decoration:none}
 .badge-pill{display:inline-block;background:var(--cream);border:2px solid var(--olive);
   color:var(--olive-dark);border-radius:999px;padding:5px 16px;font-weight:700;font-size:15px;margin-bottom:20px}
 
-/* ── Store buttons (soon = not yet published) ── */
-.stores{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
-.store-btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;
-  border-radius:16px;padding:12px 22px;min-width:215px;transition:transform .15s,box-shadow .15s;box-shadow:var(--shadow)}
-.store-btn:hover{transform:translateY(-3px);text-decoration:none;color:#fff}
-.store-btn svg{width:30px;height:30px;flex:0 0 auto;fill:#fff}
-.store-btn .t{display:flex;flex-direction:column;text-align:start;line-height:1.25}
-.store-btn .t small{font-size:12px;opacity:.85;font-weight:400}
-.store-btn .t b{font-size:19px;font-family:'Baloo Bhaijaan 2',sans-serif}
-.store-btn.soon{opacity:.55;cursor:default}
-.store-btn.soon:hover{transform:none}
 .soon-note{color:var(--muted);font-size:15px;margin-top:14px}
 
 /* ── Feature grid ── */
