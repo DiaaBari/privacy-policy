@@ -142,6 +142,7 @@
     .tag.games { background: var(--games-soft); color: var(--games); }
     .tag.learn { background: var(--learn-soft); color: var(--learn); }
     .tag.school { background: var(--school-soft); color: var(--school); }
+    .tag.studio { background: var(--accent-soft); color: var(--accent); margin-inline-start: 6px; }
     .card-desc { font-size: .9rem; color: var(--text-soft); flex: 1; }
     .highlights { display: flex; flex-wrap: wrap; gap: 6px; }
     .highlights span {
@@ -204,7 +205,7 @@
     <h1 data-i18n="heroTitle">ألعاب وتطبيقات تعليمية منشورة على المتاجر</h1>
     <p data-i18n="heroText">مجموعة من الأعمال التي طوّرتها: ألعاب ألغاز، تطبيقات لتعليم العربية للأطفال، ومناهج مدرسية تفاعلية — كلها منشورة على App Store و Google Play.</p>
     <div class="hero-cta">
-      <a class="pill-btn primary" href="mailto:diaeddinbari@gmail.com" data-i18n="contactBtn">تواصل معي</a>
+      <a class="pill-btn primary" href="mailto:diaa.themaster@gmail.com" data-i18n="contactBtn">تواصل معي</a>
       <a class="pill-btn" href="#work" data-i18n="viewWork">تصفّح الأعمال</a>
     </div>
     <div class="stats">
@@ -224,7 +225,7 @@
     <h2 data-i18n="ctaTitle">عندك فكرة لعبة أو تطبيق؟</h2>
     <p data-i18n="ctaText">من الفكرة حتى النشر على المتاجر: تطوير، تعريب كامل، مشتريات داخل التطبيق، وتجهيز صفحات الخصوصية والدعم.</p>
     <div class="hero-cta">
-      <a class="pill-btn primary" href="mailto:diaeddinbari@gmail.com">diaeddinbari@gmail.com</a>
+      <a class="pill-btn primary" href="mailto:diaa.themaster@gmail.com">diaa.themaster@gmail.com</a>
       <a class="pill-btn" href="https://www.linkedin.com/in/diaabari" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
@@ -249,6 +250,13 @@
 
   const PROJECTS = [
     // Games
+    { cat: 'games', icon: 'assets/twelve-hearts.jpg', studio: 'xo', site: 'https://xogamesstudio.com/twelve-hearts/',
+      ar: 'اثنا عشر قلبًا: الملك المظلم', en: 'Twelve Hearts: Dark King',
+      arDesc: 'لعبة أكشن سريعة في ساحات القتال تُلعب بإصبع واحد: تحرّك ويهاجم بطلك تلقائيًا لاستعادة القلوب الاثني عشر.',
+      enDesc: 'A fast one-finger arena action game: drag to move while your hero auto-attacks to reclaim the twelve hearts.',
+      hl: [['أكشن', 'Action'], ['إصبع واحد', 'One-finger']],
+      ios: 'https://apps.apple.com/app/id6836787292',
+      gp: 'https://play.google.com/store/apps/details?id=com.Xogamesstudio.Twelvehearts' },
     { cat: 'games', icon: '../riverescape/app-icon.png', site: '../riverescape/',
       ar: 'عبور النهر', en: 'River Escape',
       arDesc: 'لغز عبور النهر بين الشرطي واللص، ١٠٠ مرحلة متدرّجة الصعوبة بالعربية والإنجليزية.',
@@ -263,7 +271,7 @@
       hl: [['٦٠ مرحلة', '60 levels'], ['بلا إنترنت', 'Offline']],
       ios: 'https://apps.apple.com/us/app/cat-sort-shelf-puzzle/id6818240020',
       gp: 'https://play.google.com/store/apps/details?id=com.dow.catchgame' },
-    { cat: 'games', icon: '../birdrunner/app-icon.png', site: '../birdrunner/',
+    { cat: 'games', icon: 'assets/poisoned-rope.jpg', site: '../birdrunner/',
       ar: 'عصفور باليد', en: 'Poisoned Rope',
       arDesc: 'لعبة ألغاز قص الحبال: حرّر العصافير وتفادَ الصقور.',
       enDesc: 'A rope-cutting puzzle game: cut the ropes, free the birds, outsmart the hawks.',
@@ -283,14 +291,14 @@
       enDesc: 'A falling-sand gravity puzzle with a rising Guard Attention meter.',
       hl: [['فيزياء', 'Physics'], ['ألغاز', 'Puzzle']],
       ios: 'https://apps.apple.com/us/app/save-the-prisoner/id6792494417' },
-    { cat: 'games', icon: '../finddeffgame/owl.png', site: '../finddeffgame/',
+    { cat: 'games', icon: 'assets/find-differences.jpg', site: '../finddeffgame/',
       ar: 'اكتشف الفروقات', en: 'Find the Differences',
       arDesc: 'لعبة اكتشاف الفروقات بتصنيفات متعددة وحزم صور تُحمَّل عن بُعد.',
       enDesc: 'Spot-the-difference puzzles across many categories, with remotely loaded asset bundles.',
       hl: [['+١٠ آلاف تنزيل', '10K+ downloads'], ['Asset Bundles', 'Asset Bundles']],
       ios: 'https://apps.apple.com/app/id1670190815',
       gp: 'https://play.google.com/store/apps/details?id=com.tech4app.differences' },
-    { cat: 'games', icon: null, emoji: '🃏',
+    { cat: 'games', icon: 'assets/solitaire-cruise.png',
       ar: 'Solitaire Cruise', en: 'Solitaire Cruise',
       arDesc: 'مساهمة في تطوير واحدة من أكثر ألعاب الورق تنزيلاً حول العالم.',
       enDesc: 'Contributed to one of the most downloaded card games worldwide.',
@@ -298,28 +306,35 @@
       gp: 'https://play.google.com/store/apps/details?id=com.belkagames.solitaire' },
 
     // Kids learning
-    { cat: 'learn', icon: '../GardenofReading/app-icon.png', site: '../GardenofReading/',
+    { cat: 'learn', icon: 'assets/garden-of-letters.jpg', studio: 'mersal',
+      ar: 'بستان الحروف', en: 'Garden of Letters',
+      arDesc: 'رحلة عبر ستة عوالم تعلّم الطفل (٧–٩ سنوات) الحروف العربية الـ٢٨: الشكل والنطق والكتابة بالإصبع وتكوين الكلمات.',
+      enDesc: 'A journey across six worlds teaching children aged 7–9 all 28 Arabic letters: shape, pronunciation, finger tracing and word building.',
+      hl: [['٢٨ حرفًا', '28 letters'], ['٦ عوالم', '6 worlds']],
+      ios: 'https://apps.apple.com/app/id6776334011',
+      gp: 'https://play.google.com/store/apps/details?id=ps.org.mersal.GardenofLetters' },
+    { cat: 'learn', icon: '../GardenofReading/app-icon.png', studio: 'mersal', site: '../GardenofReading/',
       ar: 'بُستان القراءة', en: 'Bustan Al-Qiraa',
       arDesc: 'يعلّم الأطفال (٦–١٠ سنوات) القراءة بالعربية عبر ستة عوالم و٧٢ مرحلة بتوجيه صوتي.',
       enDesc: 'Teaches children aged 6–10 to read Arabic across six worlds and 72 voice-led levels.',
       hl: [['٧٢ مرحلة', '72 levels'], ['بلا إعلانات', 'No ads'], ['بلا إنترنت', 'Offline']],
       ios: 'https://apps.apple.com/us/app/bustan-al-qiraa/id6813080244',
       gp: 'https://play.google.com/store/apps/details?id=com.mersal.ps.bustanread' },
-    { cat: 'learn', icon: '../GardenofWords/app-icon.png', site: '../GardenofWords/',
+    { cat: 'learn', icon: '../GardenofWords/app-icon.png', studio: 'mersal', site: '../GardenofWords/',
       ar: 'بُستان الكلمات', en: 'Bustan Al-Kalemat',
       arDesc: 'ألغاز كلمات عربية: ١١٥ مرحلة بستة أنماط لعب مختلفة.',
       enDesc: 'Arabic word puzzles: 115 levels across six different play modes.',
       hl: [['١١٥ مرحلة', '115 levels'], ['٦ أنماط', '6 modes'], ['بلا إعلانات', 'No ads']],
       ios: 'https://apps.apple.com/us/app/bustan-arabic-word-puzzles/id6790176436',
       gp: 'https://play.google.com/store/apps/details?id=ps.org.mersal.bustankalemat' },
-    { cat: 'learn', icon: '../showcase/assets/alfy-icon.jpg', site: '../alfywrite/',
+    { cat: 'learn', icon: 'assets/alfy-icon.jpg', site: '../alfywrite/',
       ar: 'أكتب مع ألفي', en: 'Write with Alfy',
       arDesc: 'يعلّم كتابة الحروف العربية بأشكالها الأربعة، مع الأرقام والألوان.',
       enDesc: 'Teaches writing Arabic letters in all four forms, plus numbers and colors.',
       hl: [['كتابة الحروف', 'Handwriting'], ['٣–٨ سنوات', 'Ages 3–8']],
       ios: 'https://apps.apple.com/app/id6780488686',
       gp: 'https://play.google.com/store/apps/details?id=com.dow.LetsLearn' },
-    { cat: 'learn', icon: '../showcase/assets/alfy-icon.jpg', site: '../alfy/privacy-policy.html', siteAr: 'الخصوصية', siteEn: 'Privacy',
+    { cat: 'learn', icon: 'assets/alfy-icon.jpg', site: '../alfy/privacy-policy.html', siteAr: 'الخصوصية', siteEn: 'Privacy',
       ar: 'مغامرات ألفي', en: 'Alfy Adventures',
       arDesc: 'مغامرة تعليمية للصغار مع شخصية ألفي: الحروف والأرقام والألوان.',
       enDesc: 'An educational adventure with Alfy for young kids: letters, numbers and colors.',
@@ -356,7 +371,7 @@
       enDesc: 'Learning activities for daily remembrances and supplications for kids.',
       hl: [['أذكار وأدعية', 'Daily duas']],
       gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.treasureshousehold' },
-    { cat: 'learn', icon: null, emoji: '🌍',
+    { cat: 'learn', icon: 'assets/letters-land.jpg',
       ar: 'أرض الحروف', en: 'Letters Land',
       arDesc: 'تعليم الحروف العربية: النطق، موضع الحرف، الكتابة، واستخدامه في الكلمات.',
       enDesc: 'Teaches the Arabic alphabet: pronunciation, letter position, writing and word usage.',
@@ -407,6 +422,11 @@
       gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Qatarhistory1thirdgrade' },
   ];
 
+  const STUDIOS = {
+    mersal: { ar: 'مع مرسال', en: 'with Mersal' },
+    xo: { ar: 'مع Xo Games Studio', en: 'with Xo Games Studio' },
+  };
+
   const UI = {
     ar: {
       brand: 'ضياء الدين <span>عبد الباري</span>', cv: 'السيرة الذاتية',
@@ -456,9 +476,7 @@
   function card(p, cat, t) {
     const name = p[lang];
     const other = lang === 'ar' ? p.en : p.ar;
-    const icon = p.icon
-      ? `<img class="icon" src="${p.icon}" alt="" loading="lazy">`
-      : `<div class="icon" style="display:grid;place-items:center;font-size:2rem" aria-hidden="true">${p.emoji}</div>`;
+    const icon = `<img class="icon" src="${p.icon}" alt="" loading="lazy">`;
     const hl = (p.hl || []).map((h) => `<span>${esc(lang === 'ar' ? h[0] : h[1])}</span>`).join('');
     return `
       <article class="card">
@@ -467,7 +485,7 @@
           <div>
             <h3 class="card-title">${esc(name)}</h3>
             ${other !== name ? `<div class="card-sub">${esc(other)}</div>` : ''}
-            <span class="tag ${cat.id}">${esc(cat[lang])}</span>
+            <span class="tag ${cat.id}">${esc(cat[lang])}</span>${p.studio ? `<span class="tag studio">${esc(STUDIOS[p.studio][lang])}</span>` : ''}
           </div>
         </div>
         <p class="card-desc">${esc(lang === 'ar' ? p.arDesc : p.enDesc)}</p>
