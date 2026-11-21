@@ -141,6 +141,7 @@
     }
     .tag.games { background: var(--games-soft); color: var(--games); }
     .tag.learn { background: var(--learn-soft); color: var(--learn); }
+    .tag.islamic { background: rgba(12, 166, 120, 0.12); color: #0ca678; }
     .tag.school { background: var(--school-soft); color: var(--school); }
     .tag.studio { background: var(--accent-soft); color: var(--accent); margin-inline-start: 6px; }
     .card-desc { font-size: .9rem; color: var(--text-soft); flex: 1; }
@@ -244,6 +245,8 @@
       arSub: 'ألعاب ألغاز وتسلية للجميع', enSub: 'Puzzle and casual games for everyone' },
     { id: 'learn',  ar: 'تعليم الأطفال', en: 'Kids Learning',
       arSub: 'تطبيقات لتعليم العربية والقراءة للأطفال', enSub: 'Arabic reading and learning apps for children' },
+    { id: 'islamic', ar: 'تطبيقات إسلامية', en: 'Islamic Apps',
+      arSub: 'أدعية وأذكار للقراءة والاستماع', enSub: 'Supplications and remembrances to read and listen to' },
     { id: 'school', ar: 'مناهج مدرسية', en: 'School Curriculum',
       arSub: 'تطبيقات تفاعلية مبنية على المنهاج الدراسي', enSub: 'Interactive apps built on school curricula' },
   ];
@@ -365,11 +368,11 @@
       enDesc: 'Learning activities for children from age three.',
       hl: [['من ٣ سنوات', 'Ages 3+']],
       gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.SahBook' },
-    { cat: 'learn', icon: '../kanz-aladeya/assets/app-icon.jpg', site: '../kanz-aladeya/',
-      ar: 'كنز الأدعية', en: 'Kanz Al-Adeya',
-      arDesc: 'أنشطة تعليمية للأذكار والأدعية اليومية للأطفال.',
-      enDesc: 'Learning activities for daily remembrances and supplications for kids.',
-      hl: [['أذكار وأدعية', 'Daily duas']],
+    { cat: 'islamic', icon: '../kanz-aladeya/assets/app-icon.jpg', site: '../kanz-aladeya/',
+      ar: 'كنز الأدعية', en: 'Treasure of Supplications',
+      arDesc: 'أدعية من القرآن والسنة للقراءة والاستماع، وأذكار يومية لمختلف المناسبات.',
+      enDesc: 'Supplications from the Qur’an and Sunnah to read and listen to, plus daily remembrances for every occasion.',
+      hl: [['أدعية وأذكار', 'Duas & dhikr'], ['استماع صوتي', 'Audio']],
       gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.treasureshousehold' },
     { cat: 'learn', icon: 'assets/letters-land.jpg',
       ar: 'أرض الحروف', en: 'Letters Land',
