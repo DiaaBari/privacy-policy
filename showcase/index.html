@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diaeddin Abdalbari — Portfolio</title>
+  <meta name="description" content="Mobile games and Arabic educational apps built by Diaeddin Abdalbari, published on the App Store and Google Play. أعمال ضياء الدين عبد الباري: ألعاب وتطبيقات تعليمية عربية." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef1f7;
+      --border: #e2e6ef;
+      --text: #14182b;
+      --text-soft: #5b6378;
+      --accent: #2f6bff;
+      --accent-soft: rgba(47, 107, 255, 0.1);
+      --games: #e8590c;
+      --games-soft: rgba(232, 89, 12, 0.1);
+      --learn: #2b8a3e;
+      --learn-soft: rgba(43, 138, 62, 0.1);
+      --school: #7048e8;
+      --school-soft: rgba(112, 72, 232, 0.1);
+      --shadow: 0 1px 2px rgba(20, 24, 43, 0.04), 0 8px 24px rgba(20, 24, 43, 0.06);
+      --shadow-hover: 0 2px 4px rgba(20, 24, 43, 0.06), 0 16px 40px rgba(20, 24, 43, 0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0e1118;
+        --surface: #161a24;
+        --surface-2: #1f2430;
+        --border: #2a3040;
+        --text: #eef1f8;
+        --text-soft: #9aa3b8;
+        --accent: #6e9bff;
+        --accent-soft: rgba(110, 155, 255, 0.14);
+        --games: #ff8a4c;
+        --games-soft: rgba(255, 138, 76, 0.14);
+        --learn: #51cf66;
+        --learn-soft: rgba(81, 207, 102, 0.14);
+        --school: #9775fa;
+        --school-soft: rgba(151, 117, 250, 0.16);
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.45);
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0e1118; --surface: #161a24; --surface-2: #1f2430; --border: #2a3040;
+      --text: #eef1f8; --text-soft: #9aa3b8; --accent: #6e9bff; --accent-soft: rgba(110,155,255,.14);
+      --games: #ff8a4c; --games-soft: rgba(255,138,76,.14); --learn: #51cf66; --learn-soft: rgba(81,207,102,.14);
+      --school: #9775fa; --school-soft: rgba(151,117,250,.16);
+      --shadow: 0 1px 2px rgba(0,0,0,.3); --shadow-hover: 0 16px 40px rgba(0,0,0,.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    html[lang="ar"] body { font-family: 'IBM Plex Sans Arabic', 'Inter', -apple-system, sans-serif; }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* Top bar */
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+    .brand { font-weight: 700; font-size: 1rem; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand span { color: var(--accent); }
+    .top-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .pill-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      border-radius: 999px; padding: 7px 14px; font: inherit; font-size: .85rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: border-color .15s, color .15s;
+    }
+    .pill-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .pill-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .pill-btn.primary:hover { color: #fff; filter: brightness(1.08); }
+
+    /* Hero */
+    .hero { padding: 64px 0 40px; text-align: center; }
+    .hero .eyebrow {
+      display: inline-block; background: var(--accent-soft); color: var(--accent);
+      border-radius: 999px; padding: 5px 14px; font-size: .8rem; font-weight: 600; margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.2; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 14px; }
+    .hero p { color: var(--text-soft); font-size: 1.05rem; max-width: 640px; margin: 0 auto 28px; }
+    .hero-cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .hero-cta .pill-btn { padding: 11px 22px; font-size: .95rem; }
+
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin: 40px auto 0; max-width: 820px;
+    }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 10px; }
+    .stat b { display: block; font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1.2; }
+    .stat span { font-size: .82rem; color: var(--text-soft); }
+
+    /* Filters */
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 24px 0 28px; }
+    .filter {
+      border: 1px solid var(--border); background: var(--surface); color: var(--text-soft);
+      border-radius: 999px; padding: 8px 16px; font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer;
+      transition: all .15s;
+    }
+    .filter .count { opacity: .6; font-weight: 500; margin-inline-start: 4px; }
+    .filter:hover { color: var(--text); }
+    .filter[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: var(--bg); }
+
+    /* Sections & grid */
+    .group { margin-bottom: 48px; }
+    .group-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
+    .group-head h2 { font-size: 1.3rem; font-weight: 700; }
+    .group-head p { color: var(--text-soft); font-size: .9rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+      padding: 20px; display: flex; flex-direction: column; gap: 14px;
+      box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-top { display: flex; gap: 14px; align-items: center; }
+    .icon {
+      width: 68px; height: 68px; border-radius: 16px; object-fit: cover; flex-shrink: 0;
+      background: var(--surface-2); border: 1px solid var(--border);
+    }
+    .card-title { font-size: 1.05rem; font-weight: 700; line-height: 1.35; }
+    .card-sub { font-size: .8rem; color: var(--text-soft); margin-top: 2px; }
+    .tag {
+      display: inline-block; font-size: .72rem; font-weight: 600; border-radius: 6px; padding: 2px 8px; margin-top: 6px;
+    }
+    .tag.games { background: var(--games-soft); color: var(--games); }
+    .tag.learn { background: var(--learn-soft); color: var(--learn); }
+    .tag.school { background: var(--school-soft); color: var(--school); }
+    .card-desc { font-size: .9rem; color: var(--text-soft); flex: 1; }
+    .highlights { display: flex; flex-wrap: wrap; gap: 6px; }
+    .highlights span {
+      font-size: .75rem; background: var(--surface-2); color: var(--text-soft);
+      border-radius: 6px; padding: 3px 8px;
+    }
+    .card-links {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+      padding-top: 14px; border-top: 1px solid var(--border);
+    }
+    .store { display: inline-flex; border-radius: 8px; }
+    .store img { display: block; height: 40px; width: auto; }
+    .store img.gp { height: 58px; margin: -9px -6px; }
+    .store:focus-visible, .site-link:focus-visible, .pill-btn:focus-visible, .filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .site-link {
+      margin-inline-start: auto; font-size: .82rem; font-weight: 600; color: var(--accent);
+      text-decoration: none; padding: 6px 4px; white-space: nowrap;
+    }
+    .site-link:hover { text-decoration: underline; }
+
+    /* Contact */
+    .contact {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 22px;
+      padding: 40px 24px; text-align: center; margin: 16px 0 48px; box-shadow: var(--shadow);
+    }
+    .contact h2 { font-size: 1.5rem; margin-bottom: 8px; }
+    .contact p { color: var(--text-soft); margin-bottom: 22px; }
+    footer { text-align: center; color: var(--text-soft); font-size: .82rem; padding: 0 0 40px; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding: 44px 0 28px; }
+      .top-actions .hide-sm { display: none; }
+      .group-head { flex-direction: column; gap: 2px; }
+    }
+    @media print {
+      .topbar, .filters, .hero-cta { display: none; }
+      .card { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" data-i18n="brand">ضياء الدين <span>عبد الباري</span></a>
+    <div class="top-actions">
+      <a class="pill-btn hide-sm" href="../portfolio/" data-i18n="cv">السيرة الذاتية</a>
+      <button class="pill-btn" id="langBtn" type="button" aria-label="Switch language">English</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <span class="eyebrow" data-i18n="eyebrow">مطوّر ألعاب Unity · iOS و Android</span>
+    <h1 data-i18n="heroTitle">ألعاب وتطبيقات تعليمية منشورة على المتاجر</h1>
+    <p data-i18n="heroText">مجموعة من الأعمال التي طوّرتها: ألعاب ألغاز، تطبيقات لتعليم العربية للأطفال، ومناهج مدرسية تفاعلية — كلها منشورة على App Store و Google Play.</p>
+    <div class="hero-cta">
+      <a class="pill-btn primary" href="mailto:diaeddinbari@gmail.com" data-i18n="contactBtn">تواصل معي</a>
+      <a class="pill-btn" href="#work" data-i18n="viewWork">تصفّح الأعمال</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="statApps">0</b><span data-i18n="statApps">تطبيق ولعبة</span></div>
+      <div class="stat"><b>10+</b><span data-i18n="statYears">سنوات خبرة</span></div>
+      <div class="stat"><b>11M+</b><span data-i18n="statDownloads">تنزيل للمشاريع المشارِك فيها</span></div>
+      <div class="stat"><b>iOS · Android</b><span data-i18n="statPlatforms">المنصّات</span></div>
+    </div>
+  </section>
+
+  <div id="work">
+    <div class="filters" role="group" aria-label="Filter" id="filters"></div>
+    <div id="groups"></div>
+  </div>
+
+  <section class="contact">
+    <h2 data-i18n="ctaTitle">عندك فكرة لعبة أو تطبيق؟</h2>
+    <p data-i18n="ctaText">من الفكرة حتى النشر على المتاجر: تطوير، تعريب كامل، مشتريات داخل التطبيق، وتجهيز صفحات الخصوصية والدعم.</p>
+    <div class="hero-cta">
+      <a class="pill-btn primary" href="mailto:diaeddinbari@gmail.com">diaeddinbari@gmail.com</a>
+      <a class="pill-btn" href="https://www.linkedin.com/in/diaabari" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> <span data-i18n="footerName">ضياء الدين عبد الباري</span></p>
+</footer>
+
+<script>
+  // ---------- Data ----------
+  // Each project: id, category, icon, names/descriptions (ar/en), highlights, store links, optional site.
+  const BADGES = '../riverescape/store-badges/';
+  const CATEGORIES = [
+    { id: 'games',  ar: 'ألعاب', en: 'Games',
+      arSub: 'ألعاب ألغاز وتسلية للجميع', enSub: 'Puzzle and casual games for everyone' },
+    { id: 'learn',  ar: 'تعليم الأطفال', en: 'Kids Learning',
+      arSub: 'تطبيقات لتعليم العربية والقراءة للأطفال', enSub: 'Arabic reading and learning apps for children' },
+    { id: 'school', ar: 'مناهج مدرسية', en: 'School Curriculum',
+      arSub: 'تطبيقات تفاعلية مبنية على المنهاج الدراسي', enSub: 'Interactive apps built on school curricula' },
+  ];
+
+  const PROJECTS = [
+    // Games
+    { cat: 'games', icon: '../riverescape/app-icon.png', site: '../riverescape/',
+      ar: 'عبور النهر', en: 'River Escape',
+      arDesc: 'لغز عبور النهر بين الشرطي واللص، ١٠٠ مرحلة متدرّجة الصعوبة بالعربية والإنجليزية.',
+      enDesc: 'A cop-and-thief river-crossing puzzle with 100 levels of rising difficulty, in Arabic and English.',
+      hl: [['١٠٠ مرحلة', '100 levels'], ['ثنائي اللغة', 'Bilingual']],
+      ios: 'https://apps.apple.com/us/app/river-escape-cop-thief/id6832562229',
+      gp: 'https://play.google.com/store/apps/details?id=com.dow.RiverEscape' },
+    { cat: 'games', icon: '../catsort/app-icon.png', site: '../catsort/',
+      ar: 'فرز القطط', en: 'Cat Sort',
+      arDesc: 'لغز فرز قطط هادئ على الرفوف من ٦٠ مرحلة، يعمل بالكامل بلا إنترنت.',
+      enDesc: 'A cozy shelf-sorting cat puzzle with 60 levels that plays fully offline.',
+      hl: [['٦٠ مرحلة', '60 levels'], ['بلا إنترنت', 'Offline']],
+      ios: 'https://apps.apple.com/us/app/cat-sort-shelf-puzzle/id6818240020',
+      gp: 'https://play.google.com/store/apps/details?id=com.dow.catchgame' },
+    { cat: 'games', icon: '../birdrunner/app-icon.png', site: '../birdrunner/',
+      ar: 'عصفور باليد', en: 'Poisoned Rope',
+      arDesc: 'لعبة ألغاز قص الحبال: حرّر العصافير وتفادَ الصقور.',
+      enDesc: 'A rope-cutting puzzle game: cut the ropes, free the birds, outsmart the hawks.',
+      hl: [['فيزياء', 'Physics'], ['ثنائي اللغة', 'Bilingual']],
+      ios: 'https://apps.apple.com/app/id6790455662',
+      gp: 'https://play.google.com/store/apps/details?id=com.dow.birdsrunner' },
+    { cat: 'games', icon: '../PRISON%20LUDO/app-icon.png', site: '../PRISON%20LUDO/',
+      ar: 'لودو الهروب', en: 'PRISON LUDO',
+      arDesc: 'لودو بطابع السجن، بحجرَي نرد وشريط انتباه السجّان الذي يرتفع مع كل حركة.',
+      enDesc: 'A prison-themed Ludo with two dice and a Guard Attention meter that rises with every move.',
+      hl: [['لعبة لوحية', 'Board game'], ['متعدد اللاعبين', 'Multiplayer']],
+      ios: 'https://apps.apple.com/us/app/prison-ludo/id6790418898',
+      gp: 'https://play.google.com/store/apps/details?id=com.dm.PRISONLUDO' },
+    { cat: 'games', icon: '../saveprosoner/app-icon.png', site: '../saveprosoner/',
+      ar: 'أنقذ السجين', en: 'Save the Prisoner',
+      arDesc: 'لغز حبيبات رمل تنهار بالجاذبية، مع شريط انتباه السجّان.',
+      enDesc: 'A falling-sand gravity puzzle with a rising Guard Attention meter.',
+      hl: [['فيزياء', 'Physics'], ['ألغاز', 'Puzzle']],
+      ios: 'https://apps.apple.com/us/app/save-the-prisoner/id6792494417' },
+    { cat: 'games', icon: '../finddeffgame/owl.png', site: '../finddeffgame/',
+      ar: 'اكتشف الفروقات', en: 'Find the Differences',
+      arDesc: 'لعبة اكتشاف الفروقات بتصنيفات متعددة وحزم صور تُحمَّل عن بُعد.',
+      enDesc: 'Spot-the-difference puzzles across many categories, with remotely loaded asset bundles.',
+      hl: [['+١٠ آلاف تنزيل', '10K+ downloads'], ['Asset Bundles', 'Asset Bundles']],
+      ios: 'https://apps.apple.com/app/id1670190815',
+      gp: 'https://play.google.com/store/apps/details?id=com.tech4app.differences' },
+    { cat: 'games', icon: null, emoji: '🃏',
+      ar: 'Solitaire Cruise', en: 'Solitaire Cruise',
+      arDesc: 'مساهمة في تطوير واحدة من أكثر ألعاب الورق تنزيلاً حول العالم.',
+      enDesc: 'Contributed to one of the most downloaded card games worldwide.',
+      hl: [['+١٠ ملايين تنزيل', '10M+ downloads'], ['مساهمة', 'Contribution']],
+      gp: 'https://play.google.com/store/apps/details?id=com.belkagames.solitaire' },
+
+    // Kids learning
+    { cat: 'learn', icon: '../GardenofReading/app-icon.png', site: '../GardenofReading/',
+      ar: 'بُستان القراءة', en: 'Bustan Al-Qiraa',
+      arDesc: 'يعلّم الأطفال (٦–١٠ سنوات) القراءة بالعربية عبر ستة عوالم و٧٢ مرحلة بتوجيه صوتي.',
+      enDesc: 'Teaches children aged 6–10 to read Arabic across six worlds and 72 voice-led levels.',
+      hl: [['٧٢ مرحلة', '72 levels'], ['بلا إعلانات', 'No ads'], ['بلا إنترنت', 'Offline']],
+      ios: 'https://apps.apple.com/us/app/bustan-al-qiraa/id6813080244',
+      gp: 'https://play.google.com/store/apps/details?id=com.mersal.ps.bustanread' },
+    { cat: 'learn', icon: '../GardenofWords/app-icon.png', site: '../GardenofWords/',
+      ar: 'بُستان الكلمات', en: 'Bustan Al-Kalemat',
+      arDesc: 'ألغاز كلمات عربية: ١١٥ مرحلة بستة أنماط لعب مختلفة.',
+      enDesc: 'Arabic word puzzles: 115 levels across six different play modes.',
+      hl: [['١١٥ مرحلة', '115 levels'], ['٦ أنماط', '6 modes'], ['بلا إعلانات', 'No ads']],
+      ios: 'https://apps.apple.com/us/app/bustan-arabic-word-puzzles/id6790176436',
+      gp: 'https://play.google.com/store/apps/details?id=ps.org.mersal.bustankalemat' },
+    { cat: 'learn', icon: '../showcase/assets/alfy-icon.jpg', site: '../alfywrite/',
+      ar: 'أكتب مع ألفي', en: 'Write with Alfy',
+      arDesc: 'يعلّم كتابة الحروف العربية بأشكالها الأربعة، مع الأرقام والألوان.',
+      enDesc: 'Teaches writing Arabic letters in all four forms, plus numbers and colors.',
+      hl: [['كتابة الحروف', 'Handwriting'], ['٣–٨ سنوات', 'Ages 3–8']],
+      ios: 'https://apps.apple.com/app/id6780488686',
+      gp: 'https://play.google.com/store/apps/details?id=com.dow.LetsLearn' },
+    { cat: 'learn', icon: '../showcase/assets/alfy-icon.jpg', site: '../alfy/privacy-policy.html', siteAr: 'الخصوصية', siteEn: 'Privacy',
+      ar: 'مغامرات ألفي', en: 'Alfy Adventures',
+      arDesc: 'مغامرة تعليمية للصغار مع شخصية ألفي: الحروف والأرقام والألوان.',
+      enDesc: 'An educational adventure with Alfy for young kids: letters, numbers and colors.',
+      hl: [['٣–٨ سنوات', 'Ages 3–8'], ['فئة الأطفال', 'Kids category']],
+      ios: 'https://apps.apple.com/app/id6443474268' },
+    { cat: 'learn', icon: '../aladdin-words/assets/app-icon.jpg', site: '../aladdin-words/',
+      ar: 'كلمات علاء الدين', en: 'Aladdin Words',
+      arDesc: 'ألغاز كلمات عربية بأجواء علاء الدين لتنمية المفردات.',
+      enDesc: 'Aladdin-themed Arabic word puzzles that build vocabulary.',
+      hl: [['ألغاز كلمات', 'Word puzzle']],
+      gp: 'https://play.google.com/store/apps/details?id=com.dow.aladdinwords' },
+    { cat: 'learn', icon: '../aladdin-word-stacks/assets/app-icon.jpg', site: '../aladdin-word-stacks/',
+      ar: 'علاء الدين لترتيب الكلمات', en: 'Aladdin Word Stacks',
+      arDesc: 'رتّب الحروف لتكوين كلمات عربية في مراحل متدرّجة.',
+      enDesc: 'Stack and arrange letters to build Arabic words across progressive levels.',
+      hl: [['ألغاز كلمات', 'Word puzzle']],
+      gp: 'https://play.google.com/store/apps/details?id=com.dow.aladdinwordstacks' },
+    { cat: 'learn', icon: '../golden-time/assets/app-icon.jpg', site: '../golden-time/',
+      ar: 'الوقت الذهبي', en: 'Golden Time',
+      arDesc: 'أنشطة تعليمية تفاعلية للأطفال من عمر سنتين.',
+      enDesc: 'Interactive learning activities for children from age two.',
+      hl: [['من سنتين', 'Ages 2+']],
+      ios: 'https://apps.apple.com/app/id1619982286',
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.GoldenTime' },
+    { cat: 'learn', icon: '../sah-book/assets/app-icon.jpg', site: '../sah-book/',
+      ar: 'كتاب صح', en: 'Sah Book',
+      arDesc: 'أنشطة تعليمية للأطفال من عمر ثلاث سنوات.',
+      enDesc: 'Learning activities for children from age three.',
+      hl: [['من ٣ سنوات', 'Ages 3+']],
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.SahBook' },
+    { cat: 'learn', icon: '../kanz-aladeya/assets/app-icon.jpg', site: '../kanz-aladeya/',
+      ar: 'كنز الأدعية', en: 'Kanz Al-Adeya',
+      arDesc: 'أنشطة تعليمية للأذكار والأدعية اليومية للأطفال.',
+      enDesc: 'Learning activities for daily remembrances and supplications for kids.',
+      hl: [['أذكار وأدعية', 'Daily duas']],
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.treasureshousehold' },
+    { cat: 'learn', icon: null, emoji: '🌍',
+      ar: 'أرض الحروف', en: 'Letters Land',
+      arDesc: 'تعليم الحروف العربية: النطق، موضع الحرف، الكتابة، واستخدامه في الكلمات.',
+      enDesc: 'Teaches the Arabic alphabet: pronunciation, letter position, writing and word usage.',
+      hl: [['★ 5.0', '★ 5.0'], ['٥–١٢ سنة', 'Ages 5–12']],
+      ios: 'https://apps.apple.com/app/letters-land/id6461212964' },
+
+    // School curriculum
+    { cat: 'school', icon: '../tamhidy-one/assets/app-icon.jpg', site: '../tamhidy-one/',
+      ar: 'التمهيدي ١', en: 'Kindergarten 1',
+      arDesc: 'تطبيق لتعلّم اللغة العربية لمرحلة التمهيدي.',
+      enDesc: 'Arabic language learning for kindergarten.',
+      hl: [['التمهيدي', 'Kindergarten']],
+      ios: 'https://apps.apple.com/app/id1579864859' },
+    { cat: 'school', icon: '../arabic-tawasal/assets/app-icon.jpg', site: '../arabic-tawasal/',
+      ar: 'اللغة العربية – تواصل', en: 'Arabic Language – Tawasal',
+      arDesc: 'تطبيق اللغة العربية للصف الأول الابتدائي لبناء مهارات القراءة والتواصل.',
+      enDesc: 'First-grade Arabic app that builds reading and communication skills.',
+      hl: [['الصف الأول', 'Grade 1']],
+      ios: 'https://apps.apple.com/app/id1592117774',
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Arabic1firstgradetawasal' },
+    { cat: 'school', icon: '../islamic-first-grade/assets/app-icon.jpg', site: '../islamic-first-grade/',
+      ar: 'الشرعية ١ – الصف الأول', en: 'Islamic Studies 1 – Grade 1',
+      arDesc: 'دروس التربية الإسلامية للصف الأول بأسلوب تفاعلي.',
+      enDesc: 'Interactive Islamic studies lessons for first grade.',
+      hl: [['الصف الأول', 'Grade 1']],
+      ios: 'https://apps.apple.com/app/id1588098693',
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Islamic1firstgrade' },
+    { cat: 'school', icon: '../arabic-third-grade/assets/app-icon.jpg', site: '../arabic-third-grade/',
+      ar: 'اللغة العربية ١ – الصف الثالث', en: 'Arabic Language 1 – Grade 3',
+      arDesc: 'مراجعة دروس اللغة العربية للصف الثالث مع نصوص وتمارين تفاعلية.',
+      enDesc: 'Grade 3 Arabic lessons with texts and interactive exercises.',
+      hl: [['الصف الثالث', 'Grade 3']],
+      ios: 'https://apps.apple.com/app/id1581316859',
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.ArOneGradeThree' },
+    { cat: 'school', icon: '../islamic-third-grade/assets/app-icon.jpg', site: '../islamic-third-grade/',
+      ar: 'الشرعية ١ – الصف الثالث', en: 'Islamic Studies 1 – Grade 3',
+      arDesc: 'دروس التربية الإسلامية للصف الثالث بأسلوب تفاعلي.',
+      enDesc: 'Interactive Islamic studies lessons for third grade.',
+      hl: [['الصف الثالث', 'Grade 3']],
+      ios: 'https://apps.apple.com/app/id1586522904',
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Islamic1thirdgrade' },
+    { cat: 'school', icon: '../qatar-history-third-grade/assets/app-icon.jpg', site: '../qatar-history-third-grade/',
+      ar: 'اجتماعيات ١ – الصف الثالث', en: 'Social Studies 1 – Grade 3',
+      arDesc: 'دروس الاجتماعيات للصف الثالث بأنشطة تفاعلية.',
+      enDesc: 'Grade 3 social studies lessons with interactive activities.',
+      hl: [['الصف الثالث', 'Grade 3']],
+      ios: 'https://apps.apple.com/app/id1589070942',
+      gp: 'https://play.google.com/store/apps/details?id=com.Shiningstarsnursery.Qatarhistory1thirdgrade' },
+  ];
+
+  const UI = {
+    ar: {
+      brand: 'ضياء الدين <span>عبد الباري</span>', cv: 'السيرة الذاتية',
+      eyebrow: 'مطوّر ألعاب Unity · iOS و Android',
+      heroTitle: 'ألعاب وتطبيقات تعليمية منشورة على المتاجر',
+      heroText: 'مجموعة من الأعمال التي طوّرتها: ألعاب ألغاز، تطبيقات لتعليم العربية للأطفال، ومناهج مدرسية تفاعلية — كلها منشورة على App Store و Google Play.',
+      contactBtn: 'تواصل معي', viewWork: 'تصفّح الأعمال',
+      statApps: 'تطبيق ولعبة', statYears: 'سنوات خبرة', statDownloads: 'تنزيل للمشاريع المشارِك فيها', statPlatforms: 'المنصّات',
+      ctaTitle: 'عندك فكرة لعبة أو تطبيق؟',
+      ctaText: 'من الفكرة حتى النشر على المتاجر: تطوير، تعريب كامل، مشتريات داخل التطبيق، وتجهيز صفحات الخصوصية والدعم.',
+      footerName: 'ضياء الدين عبد الباري',
+      all: 'الكل', site: 'موقع التطبيق ←', langBtn: 'English',
+      appStoreAlt: 'حمّل من App Store', gpAlt: 'احصل عليه من Google Play',
+    },
+    en: {
+      brand: 'Diaeddin <span>Abdalbari</span>', cv: 'CV',
+      eyebrow: 'Unity Game Developer · iOS & Android',
+      heroTitle: 'Games and educational apps, live on the stores',
+      heroText: 'A selection of my work: puzzle games, Arabic learning apps for kids, and interactive school-curriculum apps — all published on the App Store and Google Play.',
+      contactBtn: 'Get in touch', viewWork: 'Browse work',
+      statApps: 'Apps & games', statYears: 'Years of experience', statDownloads: 'Downloads on projects I worked on', statPlatforms: 'Platforms',
+      ctaTitle: 'Have a game or app idea?',
+      ctaText: 'From idea to store launch: development, full Arabic localization, in-app purchases, and privacy and support pages.',
+      footerName: 'Diaeddin Abdalbari',
+      all: 'All', site: 'Website →', langBtn: 'العربية',
+      appStoreAlt: 'Download on the App Store', gpAlt: 'Get it on Google Play',
+    },
+  };
+
+  // ---------- Rendering ----------
+  let lang = 'ar';
+  let filter = 'all';
+  const $ = (sel) => document.querySelector(sel);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  function storeLinks(p, t) {
+    let html = '';
+    if (p.ios) html += `<a class="store" href="${p.ios}" target="_blank" rel="noopener"><img src="${BADGES}app-store-${lang}.svg" alt="${t.appStoreAlt}" loading="lazy"></a>`;
+    if (p.gp) html += `<a class="store" href="${p.gp}" target="_blank" rel="noopener"><img class="gp" src="${BADGES}google-play-${lang}.png" alt="${t.gpAlt}" loading="lazy"></a>`;
+    if (p.site) {
+      const label = p.siteAr ? (lang === 'ar' ? p.siteAr : p.siteEn) : t.site;
+      html += `<a class="site-link" href="${p.site}" target="_blank" rel="noopener">${esc(label)}</a>`;
+    }
+    return html;
+  }
+
+  function card(p, cat, t) {
+    const name = p[lang];
+    const other = lang === 'ar' ? p.en : p.ar;
+    const icon = p.icon
+      ? `<img class="icon" src="${p.icon}" alt="" loading="lazy">`
+      : `<div class="icon" style="display:grid;place-items:center;font-size:2rem" aria-hidden="true">${p.emoji}</div>`;
+    const hl = (p.hl || []).map((h) => `<span>${esc(lang === 'ar' ? h[0] : h[1])}</span>`).join('');
+    return `
+      <article class="card">
+        <div class="card-top">
+          ${icon}
+          <div>
+            <h3 class="card-title">${esc(name)}</h3>
+            ${other !== name ? `<div class="card-sub">${esc(other)}</div>` : ''}
+            <span class="tag ${cat.id}">${esc(cat[lang])}</span>
+          </div>
+        </div>
+        <p class="card-desc">${esc(lang === 'ar' ? p.arDesc : p.enDesc)}</p>
+        ${hl ? `<div class="highlights">${hl}</div>` : ''}
+        <div class="card-links">${storeLinks(p, t)}</div>
+      </article>`;
+  }
+
+  function render() {
+    const t = UI[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach((el) => { el.innerHTML = t[el.dataset.i18n]; });
+    $('#langBtn').textContent = t.langBtn;
+
+    const counts = Object.fromEntries(CATEGORIES.map((c) => [c.id, PROJECTS.filter((p) => p.cat === c.id).length]));
+    const btns = [{ id: 'all', label: t.all, n: PROJECTS.length }]
+      .concat(CATEGORIES.map((c) => ({ id: c.id, label: c[lang], n: counts[c.id] })));
+    $('#filters').innerHTML = btns.map((b) =>
+      `<button class="filter" type="button" data-filter="${b.id}" aria-pressed="${filter === b.id}">${esc(b.label)}<span class="count">${b.n}</span></button>`
+    ).join('');
+
+    $('#groups').innerHTML = CATEGORIES
+      .filter((c) => filter === 'all' || filter === c.id)
+      .map((c) => `
+        <section class="group" id="cat-${c.id}">
+          <div class="group-head">
+            <h2>${esc(c[lang])}</h2>
+            <p>${esc(lang === 'ar' ? c.arSub : c.enSub)}</p>
+          </div>
+          <div class="grid">${PROJECTS.filter((p) => p.cat === c.id).map((p) => card(p, c, t)).join('')}</div>
+        </section>`).join('');
+
+    $('#statApps').textContent = PROJECTS.length;
+  }
+
+  $('#filters').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-filter]');
+    if (!b) return;
+    filter = b.dataset.filter;
+    render();
+  });
+  $('#langBtn').addEventListener('click', () => {
+    lang = lang === 'ar' ? 'en' : 'ar';
+    try { localStorage.setItem('showcase-lang', lang); } catch (_) {}
+    render();
+  });
+
+  // Initial language: ?lang= param > saved choice > browser language.
+  const param = new URLSearchParams(location.search).get('lang');
+  let saved = null;
+  try { saved = localStorage.getItem('showcase-lang'); } catch (_) {}
+  lang = (param === 'ar' || param === 'en') ? param
+       : (saved === 'ar' || saved === 'en') ? saved
+       : (navigator.language || '').toLowerCase().startsWith('ar') ? 'ar' : 'en';
+  $('#year').textContent = new Date().getFullYear();
+  render();
+</script>
+</body>
+</html>
